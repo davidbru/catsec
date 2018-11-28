@@ -11,7 +11,7 @@ $events = array(
         'start_date' => '2018-05-16',
         'end_date' => '2018-05-18',
         'title' => 'WeAreDevelopers',
-        'location' => 'Wien',
+        'location' => 'Vienna',
         'url' => 'https://www.wearedevelopers.com/'
     ),
     20180215 => array(
@@ -36,13 +36,13 @@ $events = array(
     20171118 => array(
         'start_date' => '2017-11-18',
         'title' => 'BSidesVienna',
-        'location' => 'Wien',
+        'location' => 'Vienna',
         'url' => 'https://bsidesvienna.at/'
     ),
     20171030 => array(
         'start_date' => '2017-10-30',
         'title' => 'Datenschutz-Grundverordnung-Convention',
-        'location' => 'Wien',
+        'location' => 'Vienna',
         'url' => 'https://www.kt.at/30-oktober-2017-datenschutz-grundverordnung-convention-der-wko/'
     ),
     20170722 => array(
@@ -61,7 +61,7 @@ $events = array(
         'start_date' => '2017-05-11',
         'end_date' => '2017-05-12',
         'title' => 'WeAreDevelopers',
-        'location' => 'Wien',
+        'location' => 'Vienna',
         'url' => 'https://www.wearedevelopers.com/previous-events/'
     ),
     20170323 => array(
@@ -86,13 +86,13 @@ $events = array(
     20161113 => array(
         'start_date' => '2016-11-13',
         'title' => 'WeAreDevelopers',
-        'location' => 'Wien',
+        'location' => 'Vienna',
         'url' => 'https://www.wearedevelopers.com/previous-events/'
     ),
     20161112 => array(
         'start_date' => '2016-11-12',
         'title' => 'BSidesVienna',
-        'location' => 'Wien',
+        'location' => 'Vienna',
         'url' => 'https://bsidesvienna.at/archive/2016/'
     ),
     20150312 => array(
@@ -131,3 +131,21 @@ $events = array(
         'url' => 'https://ars.electronica.art/repair/de/'
     ),
 );
+krsort($events);
+
+
+$works = array(
+    20120401 => array(
+        'start_date' => '2012-04-01',
+        'end_date' => 'ongoing',
+        'title' => 'screencode GmbH',
+        'addinfo' => 'chief executive officer',
+        'url' => 'https://www.screencode.at'
+    ),
+    20090101 => array(
+        'start_date' => '2009-01-01',
+        'end_date' => '20120331',
+        'title' => 'independent web developer',
+    ),
+);
+krsort($works);
