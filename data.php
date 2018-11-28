@@ -142,8 +142,8 @@ $works = array(
         'addinfo' => 'chief executive officer',
         'url' => 'https://www.screencode.at'
     ),
-    20090101 => array(
-        'start_date' => '2009-01-01',
+    20050101 => array(
+        'start_date' => '2005-01-01',
         'end_date' => '20120331',
         'title' => 'independent web developer'
     ),
