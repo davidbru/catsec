@@ -10,7 +10,9 @@ function formatDateRange($start_date, $end_date = NULL) {
     } elseif(!is_null($end_date)) {
         $end_date = new DateTime($end_date);
 
-        if($start_date->format('n') === $end_date->format('n')) {
+        if($start_date->format('Y') !== $end_date->format('Y')) {
+            $dateOut = $start_date->format('Y').'–'.$end_date->format('Y');
+        } elseif($start_date->format('n') === $end_date->format('n')) {
             $dateOut = $start_date->format('d.').'–'.$end_date->format('d. F Y');
         } else {
             $dateOut = $start_date->format('d. F').'–'.$end_date->format('d. F Y');
@@ -53,6 +55,23 @@ function formatDateRange($start_date, $end_date = NULL) {
                 <td style="text-align:right;">'.formatDateRange($work['start_date'], (isset($work['end_date'])?$work['end_date']:NULL)).'</td>
                 <td>'.(isset($work['url'])?'<a href="'.$work['url'].'" target="_blank">'.$work['title'].'</a>':$work['title']).'</td>
                 <td>'.(isset($work['addinfo'])?$work['addinfo']:'').'</td>
+            </tr>
+            ';
+            }
+            ?>
+        </table>
+
+        <h2>Education</h2>
+        <table>
+            <?php
+            foreach($educations AS $education) {
+                echo '
+            <tr>
+                <td style="text-align:right;">'.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'</td>
+                <td>'.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].'</a>':$education['university']).'</td>
+                <td>'.(isset($education['location'])?$education['location']:'').'</td>
+                <td>'.(isset($education['study_course'])?$education['study_course']:'').'</td>
+                <td>'.(isset($education['degree'])?$education['degree']:'').'</td>
             </tr>
             ';
             }

@@ -145,7 +145,30 @@ $works = array(
     20090101 => array(
         'start_date' => '2009-01-01',
         'end_date' => '20120331',
-        'title' => 'independent web developer',
+        'title' => 'independent web developer'
     ),
 );
 krsort($works);
+
+
+$educations = array(
+    20060101 => array(
+        'start_date' => '2006-01-01',
+        'end_date' => '2009-01-01',
+        'university' => 'FH Joanneum',
+        'location' => 'Graz',
+        'study_course' => 'Informationsdesign',
+        'degree' => 'Bachelor of Arts in Arts and Design',
+        'url' => 'https://www.fh-joanneum.at/informationsdesign/bachelor/'
+    ),
+    20100101 => array(
+        'start_date' => '2010-01-01',
+        'end_date' => '20120331',
+        'university' => 'Kunstuniversität Linz',
+        'location' => 'Linz',
+        'study_course' => 'Interface Cultures',
+        'degree' => 'Master of Arts',
+        'url' => 'http://interface.ufg.at/'
+    ),
+);
+krsort($education);
