@@ -1,130 +1,130 @@
 <?php
 
 $events = array(
-    array(
-        'start_date' =>  '16.11.18',
+    20181116 => array(
+        'start_date' => '2018-11-16',
         'title' => 'IT-SECX 2018',
         'location' => 'St. Pölten',
         'url' => 'https://itsecx.fhstp.ac.at/'
     ),
-    array(
-        'start_date' =>  '16.05.18',
-        'end_date' => '18.05.18',
+    20180516 => array(
+        'start_date' => '2018-05-16',
+        'end_date' => '2018-05-18',
         'title' => 'WeAreDevelopers',
         'location' => 'Wien',
         'url' => 'https://www.wearedevelopers.com/'
     ),
-    array(
-        'start_date' =>  '15.02.18',
+    20180215 => array(
+        'start_date' => '2018-02-15',
         'title' => 'Technologieplauscherl LIV',
         'location' => 'Linz',
         'url' => 'https://technologieplauscherl.at/54/'
     ),
-    array(
-        'start_date' =>  '19.01.18',
+    20180119 => array(
+        'start_date' => '2018-01-19',
         'title' => 'ScriptConf',
         'location' => 'Linz',
         'url' => 'https://scriptconf.org/'
     ),
-    array(
-        'start_date' =>  '27.12.17',
-        'end_date' => '30.12.17',
+    20171227 => array(
+        'start_date' => '2017-12-27',
+        'end_date' => '2017-12-30',
         'title' => 'Chaos Communication Congress',
         'location' => 'Leipzig',
         'url' => 'https://events.ccc.de/2017/11/23/34c3-tuwat/'
     ),
-    array(
-        'start_date' =>  '18.11.17',
+    20171118 => array(
+        'start_date' => '2017-11-18',
         'title' => 'BSidesVienna',
         'location' => 'Wien',
         'url' => 'https://bsidesvienna.at/'
     ),
-    array(
-        'start_date' =>  '30.10.17',
+    20171030 => array(
+        'start_date' => '2017-10-30',
         'title' => 'Datenschutz-Grundverordnung-Convention',
         'location' => 'Wien',
         'url' => 'https://www.kt.at/30-oktober-2017-datenschutz-grundverordnung-convention-der-wko/'
     ),
-    array(
-        'start_date' =>  '22.07.17',
+    20170722 => array(
+        'start_date' => '2017-07-22',
         'title' => 'Technologieplauscherl XLVIII',
         'location' => 'Linz',
         'url' => 'https://technologieplauscherl.at/48/'
     ),
-    array(
-        'start_date' =>  '01.06.17',
+    20170601 => array(
+        'start_date' => '2017-06-01',
         'title' => 'DevOne',
         'location' => 'Linz',
         'url' => 'https://devone.at/2017/'
     ),
-    array(
-        'start_date' =>  '11.05.17',
-        'end_date' => '12.05.17',
+    20170511 => array(
+        'start_date' => '2017-05-11',
+        'end_date' => '2017-05-12',
         'title' => 'WeAreDevelopers',
         'location' => 'Wien',
         'url' => 'https://www.wearedevelopers.com/previous-events/'
     ),
-    array(
-        'start_date' =>  '23.03.17',
+    20170323 => array(
+        'start_date' => '2017-03-23',
         'title' => 'Technologieplauscherl XLV',
         'location' => 'Linz',
         'url' => 'https://technologieplauscherl.at/45/'
     ),
-    array(
-        'start_date' =>  '01.03.17',
-        'end_date' => '02.03.17',
+    20170301 => array(
+        'start_date' => '2017-03-01',
+        'end_date' => '2017-03-02',
         'title' => 'TopConf Linz',
         'location' => 'Linz',
         'url' => 'https://www.topconf.com/conference/linz-2017/'
     ),
-    array(
-        'start_date' =>  '27.01.17',
+    20170127 => array(
+        'start_date' => '2017-01-27',
         'title' => 'ScriptConf',
         'location' => 'Linz',
         'url' => 'https://scriptconf.org/2017/'
     ),
-    array(
-        'start_date' =>  '13.11.16',
+    20161113 => array(
+        'start_date' => '2016-11-13',
         'title' => 'WeAreDevelopers',
         'location' => 'Wien',
         'url' => 'https://www.wearedevelopers.com/previous-events/'
     ),
-    array(
-        'start_date' =>  '12.11.16',
+    20161112 => array(
+        'start_date' => '2016-11-12',
         'title' => 'BSidesVienna',
         'location' => 'Wien',
         'url' => 'https://bsidesvienna.at/archive/2016/'
     ),
-    array(
-        'start_date' =>  '12.03.15',
+    20150312 => array(
+        'start_date' => '2015-03-12',
         'title' => 'Technologieplauscherl XXV',
         'location' => 'Linz',
         'url' => 'https://technologieplauscherl.at/25/'
     ),
-    array(
-        'start_date' =>  '26.11.14',
+    20141126 => array(
+        'start_date' => '2014-11-26',
         'title' => 'Technologieplauscherl XXIII',
         'location' => 'Linz',
         'url' => 'https://technologieplauscherl.at/23/'
     ),
-    array(
-        'start_date' =>  '16.10.14',
+    20141016 => array(
+        'start_date' => '2014-10-16',
         'title' => 'Technologieplauscherl XXII',
         'location' => 'Linz',
         'addinfo' => 'Speaker',
         'url' => 'https://technologieplauscherl.at/22/'
     ),
-    array(
-        'start_date' =>  '31.08.11',
-        'end_date' => '06.09.11',
+    20110831 => array(
+        'start_date' => '2011-08-31',
+        'end_date' => '2011-09-06',
         'title' => 'Ars Electronica Festival',
         'location' => 'Linz',
         'addinfo' => 'Artist',
         'url' => 'https://ars.electronica.art/origin/de/'
     ),
-    array(
-        'start_date' =>  '02.09.10',
-        'end_date' => '11.09.10',
+    20100902 => array(
+        'start_date' => '2010-09-02',
+        'end_date' => '2010-09-11',
         'title' => 'Ars Electronica Festival',
         'location' => 'Linz',
         'addinfo' => 'Artist',
@@ -142,9 +142,9 @@ $events = array(
         <table>
         <?php
         foreach($events AS $event) {
-            $start_date = DateTime::createFromFormat('d.m.y', $event['start_date']);
+            $start_date = new DateTime($event['start_date']);
             if(isset($event['end_date'])) {
-                $end_date = DateTime::createFromFormat('d.m.y', $event['end_date']);
+                $end_date = new DateTime($event['end_date']);
 
                 $dateOut = $start_date->format('d.m.').'-'.$end_date->format('d.m.Y');
             } else {
