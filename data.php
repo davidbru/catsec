@@ -154,7 +154,7 @@ krsort($works);
 $educations = array(
     20060101 => array(
         'start_date' => '2006-01-01',
-        'end_date' => '2009-01-01',
+        'end_date' => '2009-05-01',
         'university' => 'FH Joanneum',
         'location' => 'Graz',
         'study_course' => 'Informationsdesign',
@@ -162,7 +162,7 @@ $educations = array(
         'url' => 'https://www.fh-joanneum.at/informationsdesign/bachelor/'
     ),
     20100101 => array(
-        'start_date' => '2010-01-01',
+        'start_date' => '2009-10-01',
         'end_date' => '20120331',
         'university' => 'Kunstuniversität Linz',
         'location' => 'Linz',
