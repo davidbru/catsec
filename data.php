@@ -169,6 +169,6 @@ $educations = array(
         'study_course' => 'Interface Cultures',
         'degree' => 'Master of Arts',
         'url' => 'http://interface.ufg.at/'
-    ),
+    )
 );
-krsort($education);
+krsort($educations);
