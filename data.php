@@ -414,3 +414,4 @@ $podcasts = array(
         'url' => 'https://workingdraft.de/'
     )
 );
+usort($podcasts, 'cmpTitleAsc');

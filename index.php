@@ -1,7 +1,5 @@
 <?php
 
-include_once('data.php');
-
 function formatDateRange($start_date, $end_date = NULL) {
     $start_date = new DateTime($start_date);
 
@@ -22,6 +20,12 @@ function formatDateRange($start_date, $end_date = NULL) {
     }
     return $dateOut;
 }
+
+function cmpTitleAsc($a, $b) {
+    return strcmp($a['title'], $b['title']);
+}
+
+include_once('data.php');
 
 ?><html>
 	<head>
