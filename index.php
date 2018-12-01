@@ -77,5 +77,32 @@ function formatDateRange($start_date, $end_date = NULL) {
             }
             ?>
         </table>
-	</body>
+
+        <h2>ECTS</h2>
+        <?php
+            foreach($courseData AS $university => $coursesGroups) {
+                echo '
+                    <h3>'.$university.'</h3>
+                    <table>
+                ';
+                foreach($coursesGroups AS $courseGroup) {
+                    echo '
+                        <tr><td colspan="2"><h4>'.$courseGroup['title'].'</h4></td></tr>
+                    ';
+                    foreach($courseGroup['courses'] AS $course) {
+                        echo '
+                            <tr>
+                                <td>'.$course['points'].'</td>
+                                <td>'.$course['title'].'</td>
+                            </tr>
+                        ';
+                    }
+                }
+                echo '
+                    </table>
+                ';
+            }
+        ?>
+
+    </body>
 </html>

@@ -172,3 +172,161 @@ $educations = array(
     )
 );
 krsort($educations);
+
+
+$courseData = array(
+    'Interface Cultures' => array(
+        array(
+            'title' => 'Interface Literacy',
+            'courses' => array(
+                array('points' => 15, 'title' => 'Interface Technologien I'),
+                array('points' => 15, 'title' => 'Interaktive Kunst & Medientheorien')
+            )
+        ),
+        array(
+            'title' => 'Interface Labor',
+            'courses' => array(
+                array('points' => 15, 'title' => 'Interface Labor I'),
+                array('points' => 15, 'title' => 'Module aus Interface Cultures und/oder verwandten Fächern')
+            )
+        ),
+        array(
+            'title' => 'Weiterführende Labors',
+            'courses' => array(
+                array('points' => 15, 'title' => 'Advanced Interface Labor'),
+                array('points' => 15, 'title' => 'Freie Wahlfächer')
+            )
+        ),
+        array(
+            'title' => 'Masterarbeit',
+            'courses' => array(
+                array('points' => 15, 'title' => 'Theoretische Masterarbeit'),
+                array('points' => 15, 'title' => 'Praktisches Masterprojekt')
+            )
+        )
+    ),
+    'Informationsdesign' => array(
+        array(
+            'title' => 'Begleitende Seminare',
+            'courses' => array(
+                array('points' => 3, 'title' => 'Portfolio'),
+                array('points' => 3, 'title' => 'Seminar zum Berufspraktikum'),
+                array('points' => 2, 'title' => 'Seminar zur Bakkalaureatsarbeit I'),
+                array('points' => 3, 'title' => 'Seminar zur Bakkalaureatsarbeit II')
+            )
+        ),
+        array(
+            'title' => 'Berufspraktikum',
+            'courses' => array(
+                array('points' => 24, 'title' => 'Berufspraktikum 12 Wochen')
+            )
+        ),
+        array(
+            'title' => 'Exhibition Design',
+            'courses' => array(
+                array('points' => 1, 'title' => 'Ausstellungsdidaktik')
+            )
+        ),
+        array(
+            'title' => 'Humanities',
+            'courses' => array(
+                array('points' => 2, 'title' => 'Cultural Studies'),
+                array('points' => 2, 'title' => 'Kunstgeschichte')
+            )
+        ),
+        array(
+            'title' => 'Informationsdesign',
+            'courses' => array(
+                array('points' => 1, 'title' => 'Advertising'),
+                array('points' => 2, 'title' => 'Informationsdesign 1'),
+                array('points' => 2, 'title' => 'Informationsdesign 2'),
+                array('points' => 3, 'title' => 'Informationsdesign 3'),
+                array('points' => 2, 'title' => 'Ringvorlesung 1'),
+                array('points' => 2, 'title' => 'Ringvorlesung 2'),
+                array('points' => 3, 'title' => 'Typographie')
+            )
+        ),
+        array(
+            'title' => 'Media and Interaction Design',
+            'courses' => array(
+                array('points' => 3, 'title' => 'Interactive Spaces'),
+                array('points' => 3, 'title' => 'Multimedia Authoring 1'),
+                array('points' => 3, 'title' => 'Multimedia Authoring 2'),
+                array('points' => 8, 'title' => 'Projektarbeit MID'),
+                array('points' => 3, 'title' => 'Time Based Media')
+            )
+        ),
+        array(
+            'title' => 'Medien und Kunst',
+            'courses' => array(
+                array('points' => 2, 'title' => 'Kunsttheorie und ästhetische Praxis 1'),
+                array('points' => 2, 'title' => 'Kunsttheorie und ästhetische Praxis 2'),
+                array('points' => 2, 'title' => 'Kunsttheorie und ästhetische Praxis 3'),
+                array('points' => 2, 'title' => 'Kunsttheorie und ästhetische Praxis 4'),
+                array('points' => 2, 'title' => 'Medientheorie 1'),
+                array('points' => 1, 'title' => 'Medientheorie 2')
+            )
+        ),
+        array(
+            'title' => 'Medientechnologische Kompetenzen',
+            'courses' => array(
+                array('points' => 3, 'title' => '3D-Modelling und 3D-Animation'),
+                array('points' => 1, 'title' => 'Anwendungsorientiertes Programmieren'),
+                array('points' => 2, 'title' => 'Audioproduktion 1'),
+                array('points' => 2, 'title' => 'Audioproduktion 2'),
+                array('points' => 2, 'title' => 'Compositing und Postproduktion'),
+                array('points' => 3, 'title' => 'Dynamisches Web'),
+                array('points' => 4, 'title' => 'Grafische Werkzeuge 1'),
+                array('points' => 3, 'title' => 'Grafische Werkzeuge 2'),
+                array('points' => 3, 'title' => 'Medieninformatik 1'),
+                array('points' => 2, 'title' => 'Medieninformatik 2'),
+                array('points' => 2, 'title' => 'Orientierungssysteme / Dynamische Anzeigen'),
+                array('points' => 3, 'title' => 'Streaming und Kompression'),
+                array('points' => 2, 'title' => 'Theorien und Methoden des wissenschaftlichen Arbeitens')
+            )
+        ),
+        array(
+            'title' => 'Projektarbeit',
+            'courses' => array(
+                array('points' => 2, 'title' => 'Auftragsorientiertes Gestalten 1'),
+                array('points' => 2, 'title' => 'Auftragsorientiertes Gestalten 2'),
+                array('points' => 6, 'title' => 'Projektarbeit 1 - Grundlagen der Gestaltung'),
+                array('points' => 6, 'title' => 'Projektarbeit 2 - Ausstellungen'),
+                array('points' => 6, 'title' => 'Projektarbeit 3 - Video'),
+                array('points' => 6, 'title' => 'Projektarbeit 4 - Virtuelle Firmen')
+            )
+        ),
+        array(
+            'title' => 'Soziale und kommunikative Kompetenzen',
+            'courses' => array(
+                array('points' => 2, 'title' => 'General English 1'),
+                array('points' => 2, 'title' => 'General English 2'),
+                array('points' => 1, 'title' => 'Kommunikationsmethoden'),
+                array('points' => 2, 'title' => 'Professional English 1'),
+                array('points' => 2, 'title' => 'Professional English 2'),
+                array('points' => 2, 'title' => 'Professional English 3'),
+                array('points' => 2, 'title' => 'Professionelles Schreiben 1'),
+                array('points' => 2, 'title' => 'Professionelles Schreiben 2'),
+                array('points' => 2, 'title' => 'Professionelles Schreiben 3'),
+                array('points' => 1, 'title' => 'Präsentationstechnik')
+            )
+        ),
+        array(
+            'title' => 'User Interface Design',
+            'courses' => array(
+                array('points' => 2, 'title' => 'E-Learning'),
+                array('points' => 3, 'title' => 'Game based Learning'),
+                array('points' => 2, 'title' => 'Usability Testing'),
+                array('points' => 3, 'title' => 'User interface Design'),
+                array('points' => 2, 'title' => 'User-zentriertes Design')
+            )
+        ),
+        array(
+            'title' => 'Wirtschaft und Recht',
+            'courses' => array(
+                array('points' => 2, 'title' => 'Grundlagen der Unternehmensführung'),
+                array('points' => 2, 'title' => 'Medienrecht')
+            )
+        )
+    )
+);
