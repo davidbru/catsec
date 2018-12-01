@@ -6,7 +6,7 @@ function formatDateRange($start_date, $end_date = NULL) {
     $start_date = new DateTime($start_date);
 
     if($end_date === 'ongoing') {
-        $dateOut = $start_date->format('d. F Y').'–'.$end_date;
+        $dateOut = $start_date->format('Y').'–'.$end_date;
     } elseif(!is_null($end_date)) {
         $end_date = new DateTime($end_date);
 
