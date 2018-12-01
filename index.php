@@ -104,5 +104,15 @@ function formatDateRange($start_date, $end_date = NULL) {
             }
         ?>
 
+        <h2>Podcasts</h2>
+        <ul>
+            <?php
+                foreach($podcasts AS $podcast) {
+                    echo '
+                        <li>'.(isset($podcast['url'])?'<a href="'.$podcast['url'].'" target="_blank">'.$podcast['title'].'</a>':$podcast['title']).'</li>
+                    ';
+                }
+            ?>
+        </ul>
     </body>
 </html>

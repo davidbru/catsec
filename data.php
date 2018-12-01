@@ -330,3 +330,87 @@ $courseData = array(
         )
     )
 );
+
+
+$podcasts = array(
+    array(
+        'title' => 'Chaosradio',
+        'url' => 'https://chaosradio.de/'
+    ),
+    array(
+        'title' => 'The CyberWire',
+        'url' => 'https://www.thecyberwire.com/'
+    ),
+    array(
+        'title' => 'Darknet Diaries',
+        'url' => 'https://darknetdiaries.com/'
+    ),
+    array(
+        'title' => 'Donau Tech Radio - DTR',
+        'url' => 'https://dtr.fm/'
+    ),
+    array(
+        'title' => 'Grumpy Old Geeks',
+        'url' => 'http://gog.show/'
+    ),
+    array(
+        'title' => 'Alternativlos',
+        'url' => 'https://www.alternativlos.org/'
+    ),
+    array(
+        'title' => 'Brakeing Down Security Podcast',
+        'url' => 'http://brakeingsecurity.com/'
+    ),
+    array(
+        'title' => 'CRE: Technik, Kultur, Gesellschaft',
+        'url' => 'https://cre.fm/'
+    ),
+    array(
+        'title' => 'Future State',
+        'url' => 'https://futurestatepodcast.com/'
+    ),
+    array(
+        'title' => 'Hacking Humans',
+        'url' => 'https://thecyberwire.com/podcasts/hacking-humans.html'
+    ),
+    array(
+        'title' => 'Internet History Podcast',
+        'url' => 'http://www.internethistorypodcast.com/'
+    ),
+    array(
+        'title' => 'Malicious Life',
+        'url' => 'https://malicious.life/'
+    ),
+    array(
+        'title' => 'Rechtsbelehrung - Jurapodcast mit Netzthemen',
+        'url' => 'https://rechtsbelehrung.com/'
+    ),
+    array(
+        'title' => 'Recorded Future - Inside Threat Intelligence for Cyber Security',
+        'url' => 'https://www.recordedfuture.com/resources/podcasts/'
+    ),
+    array(
+        'title' => 'Reply All',
+        'url' => 'https://www.gimletmedia.com/reply-all/'
+    ),
+    array(
+        'title' => 'Risky Business',
+        'url' => 'https://risky.biz/netcasts/risky-business/'
+    ),
+    array(
+        'title' => 'Root Access',
+        'url' => 'https://www.rootaccesspodcast.com/'
+    ),
+    array(
+        'title' => 'ScriptCast - A podcast about JavaScript',
+        'url' => 'https://javascript-podcast.com/'
+    ),
+    array(
+        'title' => 'Was soll das?',
+        'url' => 'https://twitter.com/podwassolldas'
+    ),
+    array(
+        'title' => 'Working Draft',
+        'url' => 'https://workingdraft.de/'
+    )
+);
