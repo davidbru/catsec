@@ -4,7 +4,14 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "uglifyjs": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/scripts.js && uglifyjs src/js/*.js -m -c -o dist/js/scripts.min.js"
+    "jshint": "jshint src/js/*.js",
+    "clean": "rm -rf dist",
+    "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/scripts.js && uglifyjs src/js/*.js -m -c -o dist/js/scripts.min.js",
+    "sass": "mkdir -p dist/css && sass src/css/styles.scss > dist/css/styles.min.css",
+    "build:js": "npm run jshint && npm run uglify",
+    "build:css": "npm run sass",
+    "build": "npm run clean && npm run build:js && npm run build:css",
+    "watch": "watch 'npm run build' ./src"
   },
   "repository": {
     "type": "git",
@@ -13,6 +20,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uglify-js": "^3.4.9"
+    "jshint": "^2.9.6",
+    "sass": "^1.15.1",
+    "uglify-js": "^3.4.9",
+    "watch": "^1.0.2"
   }
 }
