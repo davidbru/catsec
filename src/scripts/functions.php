@@ -10,12 +10,12 @@
             if($start_date->format('Y') !== $end_date->format('Y')) {
                 $dateOut = $start_date->format('Y').'–'.$end_date->format('Y');
             } elseif($start_date->format('n') === $end_date->format('n')) {
-                $dateOut = $start_date->format('d.').'–'.$end_date->format('d. F Y');
+                $dateOut = $start_date->format('d.').'–'.$end_date->format('d.m.Y');
             } else {
-                $dateOut = $start_date->format('d. F').'–'.$end_date->format('d. F Y');
+                $dateOut = $start_date->format('d.m.').'–'.$end_date->format('d.m.Y');
             }
         } else {
-            $dateOut = $start_date->format('d. F Y');
+            $dateOut = $start_date->format('d.m.Y');
         }
         return $dateOut;
     }
