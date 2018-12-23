@@ -18,7 +18,7 @@ include_once('./scripts/data.php');
     </div>
 </div>
 <div class="container">
-    <h2>Events</h2>
+    <h2 class="mt-5">Events</h2>
         <?php
         $counter = 0;
         foreach($events AS $event) {
@@ -44,22 +44,32 @@ include_once('./scripts/data.php');
         }
         ?>
 
-    <h2>Work</h2>
-    <table>
+    <h2 class="mt-5">Work</h2>
         <?php
+        $counter = 0;
         foreach($works AS $work) {
+            $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
+            if($counter == 0) {
+                $rowClasses[] = 'border-top';
+            }
             echo '
-                <tr>
-                    <td>'.formatDateRange($work['start_date'], (isset($work['end_date'])?$work['end_date']:NULL)).'</td>
-                    <td>'.(isset($work['url'])?'<a href="'.$work['url'].'" target="_blank">'.$work['title'].'</a>':$work['title']).'</td>
-                    <td>'.(isset($work['addinfo'])?$work['addinfo']:'').'</td>
-                </tr>
+                <div class="'.implode(' ', $rowClasses).'">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
+                        <small>'.formatDateRange($work['start_date'], (isset($work['end_date'])?$work['end_date']:NULL)).'</small>
+                    </div>
+                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
+                        '.(isset($work['url'])?'<a href="'.$work['url'].'" target="_blank">'.$work['title'].'</a>':$work['title']).'
+                    </div>
+                    <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
+                        '.(isset($work['addinfo'])?$work['addinfo']:'').'
+                    </div>
+                </div>
                 ';
+            $counter ++;
         }
         ?>
-    </table>
 
-    <h2>Education</h2>
+    <h2 class="mt-5">Education</h2>
     <table>
         <?php
         foreach($educations AS $education) {
@@ -76,7 +86,7 @@ include_once('./scripts/data.php');
         ?>
     </table>
 
-    <h2>ECTS</h2>
+    <h2 class="mt-5">ECTS</h2>
     <?php
     foreach($courseData AS $university => $coursesGroups) {
         echo '
@@ -102,7 +112,7 @@ include_once('./scripts/data.php');
     }
     ?>
 
-    <h2>Podcasts</h2>
+    <h2 class="mt-5">Podcasts</h2>
     <ul>
         <?php
         foreach($podcasts AS $podcast) {
