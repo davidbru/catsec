@@ -20,15 +20,27 @@ include_once('./scripts/data.php');
 <div class="container">
     <h2>Events</h2>
         <?php
+        $counter = 0;
         foreach($events AS $event) {
+            $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
+            if($counter == 0) {
+                $rowClasses[] = 'border-top';
+            }
             echo '
-                <div class="row">
-                    <div class="col-4">'.formatDateRange($event['start_date'], (isset($event['end_date'])?$event['end_date']:NULL)).'</div>
-                    <div class="col-5"><a href="'.$event['url'].'" target="_blank">'.$event['title'].'</a></div>
-                    <div class="col-1">'.$event['location'].'</div>
-                    <div class="col-2">'.(isset($event['addinfo'])?$event['addinfo']:'').'</div>
-                </div>
+                <div class="'.implode(' ', $rowClasses).'">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
+                        <small>'.formatDateRange($event['start_date'], (isset($event['end_date'])?$event['end_date']:NULL)).'</small>
+                    </div>
+                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
+                        <a href="'.$event['url'].'" target="_blank">'.$event['title'].'</a>
+                        '.(isset($event['addinfo'])?'<small>'.$event['addinfo'].'</small>':'').'
+                    </div>
+                    <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
+                        '.$event['location'].'
+                    </div>
+              </div>
                 ';
+            $counter ++;
         }
         ?>
 
