@@ -70,21 +70,29 @@ include_once('./scripts/data.php');
         ?>
 
     <h2 class="mt-5">Education</h2>
-    <table>
         <?php
+        $counter = 0;
         foreach($educations AS $education) {
+            $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
+            if($counter == 0) {
+                $rowClasses[] = 'border-top';
+            }
             echo '
-                <tr>
-                    <td>'.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'</td>
-                    <td>'.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].'</a>':$education['university']).'</td>
-                    <td>'.(isset($education['location'])?$education['location']:'').'</td>
-                    <td>'.(isset($education['study_course'])?$education['study_course']:'').'</td>
-                    <td>'.(isset($education['degree'])?$education['degree']:'').'</td>
-                </tr>
+                <div class="'.implode(' ', $rowClasses).'">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
+                    '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
+                    </div>
+                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
+                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'
+                    </div>
+                    <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
+                        '.(isset($education['location'])?$education['location']:'').'
+                    </div>
+                </div>
                 ';
+            $counter ++;
         }
         ?>
-    </table>
 
     <h2 class="mt-5">ECTS</h2>
     <?php
