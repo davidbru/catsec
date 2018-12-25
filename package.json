@@ -9,9 +9,11 @@
     "copy": "mkdir -p dist/scripts && cp src/*.{php,txt} dist/ && cp src/scripts/*.php dist/scripts",
     "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/scripts.js && uglifyjs src/js/*.js -m -c -o dist/js/scripts.min.js",
     "sass": "mkdir -p dist/css && sass src/css/styles.scss > dist/css/styles.min.css",
+    "tinify": "mkdir -p dist/img && node node_tinify.js",
+    "build:img": "npm run tinify",
     "build:js": "npm run jshint && npm run uglify",
     "build:css": "npm run sass",
-    "build": "npm run clean && npm run copy && npm run build:js && npm run build:css",
+    "build": "npm run clean && npm run copy && npm run build:js && npm run build:css && npm run build:img",
     "watch": "watch 'npm run build' ./src"
   },
   "repository": {
@@ -23,6 +25,7 @@
   "dependencies": {
     "jshint": "^2.9.6",
     "sass": "^1.15.1",
+    "tinify": "^1.6.0-beta.2",
     "uglify-js": "^3.4.9",
     "watch": "^1.0.2"
   }
