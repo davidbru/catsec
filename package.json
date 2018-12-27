@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "jshint": "jshint src/js/*.js",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf tmp && mkdir -p tmp && mv dist/img tmp/img && rm -rf dist && mkdir -p dist && mv tmp/img dist/img && rm -rf tmp",
     "copy": "mkdir -p dist/scripts && cp src/*.{php,txt} dist/ && cp src/scripts/*.php dist/scripts",
     "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/scripts.js && uglifyjs src/js/*.js -m -c -o dist/js/scripts.min.js",
     "sass": "mkdir -p dist/css && sass src/css/styles.scss > dist/css/styles.min.css",
