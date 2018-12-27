@@ -26,7 +26,7 @@ include_once('./scripts/data.php');
     <div class="container text-white">
         <div class="row">
             <div class="col-12 col-sm-2 d-flex flex-wrap align-items-center mt-3 mt-sm-0">
-                <img src="img/logo_db.svg" alt="Logo David Brunnthaler" title="Logo David Brunnthaler" />
+                <img src="/img/logo_db.svg" alt="Logo David Brunnthaler" title="Logo David Brunnthaler" />
             </div>
             <div class="col-12 col-sm-10">
                 <h1><small>Curriculum Vitae</small><br />David Brunnthaler</h1>
@@ -144,7 +144,7 @@ include_once('./scripts/data.php');
         <?php
         foreach($podcasts AS $podcast) {
             echo '<li class="col-12 col-sm-6 col-md-4 col-lg-3 pb-3"><div>'.
-                wrapInExtLink('<img src="img/'.$podcast['img'].'" alt="'.$podcast['title'].'" title="'.$podcast['title'].'" /><div class="text">'.$podcast['title'].'</div>', (isset($podcast['url'])?$podcast['url']:NULL)).
+                wrapInExtLink('<img src="/img/'.$podcast['img'].'" alt="'.$podcast['title'].'" title="'.$podcast['title'].'" /><div class="text">'.$podcast['title'].'</div>', (isset($podcast['url'])?$podcast['url']:NULL)).
                 '</div></li>';
         }
         ?>
