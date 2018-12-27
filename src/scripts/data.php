@@ -335,83 +335,103 @@ $courseData = array(
 $podcasts = array(
     array(
         'title' => 'Chaosradio',
-        'url' => 'https://chaosradio.de/'
+        'url' => 'https://chaosradio.de/',
+        'img' => 'chaosradio.png'
     ),
     array(
         'title' => 'The CyberWire',
-        'url' => 'https://www.thecyberwire.com/'
+        'url' => 'https://www.thecyberwire.com/',
+        'img' => 'cyberwire.png'
     ),
     array(
         'title' => 'Darknet Diaries',
-        'url' => 'https://darknetdiaries.com/'
+        'url' => 'https://darknetdiaries.com/',
+        'img' => 'darknet-diaries.png'
     ),
     array(
         'title' => 'Donau Tech Radio - DTR',
-        'url' => 'https://dtr.fm/'
+        'url' => 'https://dtr.fm/',
+        'img' => 'donau-tech-radio.png'
     ),
     array(
         'title' => 'Grumpy Old Geeks',
-        'url' => 'http://gog.show/'
+        'url' => 'http://gog.show/',
+        'img' => 'grumpy-old-geeks.png'
     ),
     array(
         'title' => 'Alternativlos',
-        'url' => 'https://www.alternativlos.org/'
+        'url' => 'https://www.alternativlos.org/',
+        'img' => 'alternativlos.svg'
     ),
     array(
         'title' => 'Brakeing Down Security Podcast',
-        'url' => 'http://brakeingsecurity.com/'
+        'url' => 'http://brakeingsecurity.com/',
+        'img' => 'brakeing-down-security.png'
     ),
     array(
         'title' => 'CRE: Technik, Kultur, Gesellschaft',
-        'url' => 'https://cre.fm/'
+        'url' => 'https://cre.fm/',
+        'img' => 'cre.png'
     ),
     array(
         'title' => 'Future State',
-        'url' => 'https://futurestatepodcast.com/'
+        'url' => 'https://futurestatepodcast.com/',
+        'img' => 'future-state.jpg'
     ),
     array(
         'title' => 'Hacking Humans',
-        'url' => 'https://thecyberwire.com/podcasts/hacking-humans.html'
+        'url' => 'https://thecyberwire.com/podcasts/hacking-humans.html',
+        'img' => 'hacking-humans.png'
     ),
     array(
         'title' => 'Internet History Podcast',
-        'url' => 'http://www.internethistorypodcast.com/'
+        'url' => 'http://www.internethistorypodcast.com/',
+        'img' => 'internet-history-podcast.png'
     ),
     array(
         'title' => 'Malicious Life',
-        'url' => 'https://malicious.life/'
+        'url' => 'https://malicious.life/',
+        'img' => 'malicious-life.jpg'
     ),
     array(
         'title' => 'Rechtsbelehrung - Jurapodcast mit Netzthemen',
-        'url' => 'https://rechtsbelehrung.com/'
+        'url' => 'https://rechtsbelehrung.com/',
+        'img' => 'rechtsbelehrung.png'
     ),
     array(
         'title' => 'Recorded Future - Inside Threat Intelligence for Cyber Security',
-        'url' => 'https://www.recordedfuture.com/resources/podcasts/'
+        'url' => 'https://www.recordedfuture.com/resources/podcasts/',
+        'img' => 'recorded-future.png'
     ),
     array(
         'title' => 'Reply All',
-        'url' => 'https://www.gimletmedia.com/reply-all/'
+        'url' => 'https://www.gimletmedia.com/reply-all/',
+        'img' => 'reply-all.png'
     ),
     array(
         'title' => 'Risky Business',
-        'url' => 'https://risky.biz/netcasts/risky-business/'
+        'url' => 'https://risky.biz/netcasts/risky-business/',
+        'img' => 'risky-biz.png'
     ),
     array(
         'title' => 'Root Access',
-        'url' => 'https://www.rootaccesspodcast.com/'
+        'url' => 'https://www.rootaccesspodcast.com/',
+        'img' => 'root-access.jpg'
     ),
     array(
         'title' => 'ScriptCast - A podcast about JavaScript',
-        'url' => 'https://javascript-podcast.com/'
+        'url' => 'https://javascript-podcast.com/',
+        'img' => 'scriptcast.png'
     ),
     array(
         'title' => 'Was soll das?',
-        'url' => 'https://twitter.com/podwassolldas'
+        'url' => 'https://twitter.com/podwassolldas',
+        'img' => 'was-soll-das.png'
     ),
     array(
         'title' => 'Working Draft',
-        'url' => 'https://workingdraft.de/'
+        'url' => 'https://workingdraft.de/',
+        'img' => 'working-draft.png'
     )
 );
 usort($podcasts, 'cmpTitleAsc');

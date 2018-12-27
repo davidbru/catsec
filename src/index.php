@@ -125,7 +125,7 @@ include_once('./scripts/data.php');
         <?php
         foreach($podcasts AS $podcast) {
             echo '
-                            <li>'.(isset($podcast['url'])?'<a href="'.$podcast['url'].'" target="_blank">'.$podcast['title'].'</a>':$podcast['title']).'</li>
+                            <li><img src="img/'.$podcast['img'].'" /> '.(isset($podcast['url'])?'<a href="'.$podcast['url'].'" target="_blank">'.$podcast['title'].'</a>':$podcast['title']).'</li>
                         ';
         }
         ?>
