@@ -24,3 +24,9 @@
     function cmpTitleAsc($a, $b) {
         return strcmp($a['title'], $b['title']);
     }
+
+
+    function wrapInExtLink($content, $link = NULL) {
+        $html = (isset($link)?'<a href="'.$link.'" target="_blank">'.$content.'</a>':$content);
+        return $html;
+    }

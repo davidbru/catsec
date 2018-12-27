@@ -1,2 +1,42 @@
 @import 'bootstrap/bootstrap';
 
+.podcasts {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+        &>div {
+            position: relative;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            .text {
+                font-size: 0.75rem;
+                opacity: 0.45;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 0.5rem 1rem;
+                background: rgba(#000, 0.9);
+                color: #fff;
+
+                transition: opacity 500ms ease-in-out, font-size 500ms ease-in-out, padding 500ms ease-in-out;
+            }
+        }
+
+        &:hover>div,
+        &>div a:hover,
+        &>div a:focus {
+            .text {
+                opacity: 1;
+                font-size: 1rem;
+                padding: 1rem 1rem;
+            }
+        }
+    }
+}

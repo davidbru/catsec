@@ -121,12 +121,12 @@ include_once('./scripts/data.php');
     ?>
 
     <h2 class="mt-5">Podcasts</h2>
-    <ul>
+    <ul class="podcasts row">
         <?php
         foreach($podcasts AS $podcast) {
-            echo '
-                            <li><img src="img/'.$podcast['img'].'" /> '.(isset($podcast['url'])?'<a href="'.$podcast['url'].'" target="_blank">'.$podcast['title'].'</a>':$podcast['title']).'</li>
-                        ';
+            echo '<li class="col-12 col-sm-6 col-md-4 col-lg-3 pb-3"><div>'.
+                wrapInExtLink('<img src="img/'.$podcast['img'].'" alt="'.$podcast['title'].'" title="'.$podcast['title'].'" /><div class="text">'.$podcast['title'].'</div>', (isset($podcast['url'])?$podcast['url']:NULL)).
+                '</div></li>';
         }
         ?>
     </ul>
