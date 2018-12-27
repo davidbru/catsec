@@ -140,7 +140,7 @@ include_once('./scripts/data.php');
     ?>
 
     <h2 class="mt-5">Podcasts</h2>
-    <ul class="podcasts row">
+    <ul class="podcasts row m-0 p-0">
         <?php
         foreach($podcasts AS $podcast) {
             echo '<li class="col-12 col-sm-6 col-md-4 col-lg-3 pb-3"><div>'.
