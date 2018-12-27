@@ -4,13 +4,46 @@ const crypto = require('crypto');
 const tinify = require('tinify');
 
 const secrets=require('./node_secrets.json');
-const imgFolder = './src/img/';
+const imgSrcFolder = 'src/img';
+let files = [];
+let folders = [];
 
 tinify.key = secrets['tinifyApiKey'];
 
 let signatureFileContent;
 let signatureFileContentSplit = [];
-const signatureFile = 'src/img/.tinypng-sigs';
+const signatureFile = imgSrcFolder+'/.tinypng-sigs';
+
+
+function walkSync(currentDirPath, callback) {
+    fs.readdirSync(currentDirPath).forEach(function (name) {
+        var filePath = path.join(currentDirPath, name);
+        var stat = fs.statSync(filePath);
+        if (stat.isFile()) {
+            callback(filePath, stat);
+        } else if (stat.isDirectory()) {
+            folders.push(filePath.replace('src', 'dist'));
+            walkSync(filePath, callback);
+        }
+    });
+}
+
+// push files to files-array
+walkSync(imgSrcFolder, function(filePath, stat) {
+    if(filePath !== imgSrcFolder+'/.DS_Store' &&
+        filePath !== signatureFile) {
+        files.push(filePath);
+    }
+});
+
+
+// create folders in dist if necessary
+folders.forEach(folder => {
+    if (!fs.existsSync(folder)){
+        fs.mkdirSync(folder);
+    }
+});
+
 
 checkSignatureFile();
 
@@ -39,43 +72,38 @@ function checkSignatureFile() {
 
 
 function loopThroughFiles() {
-    fs.readdir(imgFolder, (err, files) => {
-        files.forEach(file => {
-            if(file !== '.DS_Store' &&
-                file !== '.tinypng-sigs') {
-                if (path.extname(file) === '.jpg' ||
-                    path.extname(file) === '.jpeg' ||
-                    path.extname(file) === '.png') {
-                    let doTinifyImg = true;
-                    let currentFile = 'src/img/' + file;
-                    let currentHash;
+    files.forEach(file => {
+        if (path.extname(file) === '.jpg' ||
+            path.extname(file) === '.jpeg' ||
+            path.extname(file) === '.png') {
+            let doTinifyImg = true;
+            let currentFile = file;
+            let currentHash;
 
-                    fs.createReadStream(currentFile).
-                    pipe(crypto.createHash('sha1').setEncoding('hex')).
-                    on('finish', function () {
-                        currentHash = this.read();
+            fs.createReadStream(currentFile).
+            pipe(crypto.createHash('sha1').setEncoding('hex')).
+            on('finish', function () {
+                currentHash = this.read();
 
-                        for(let i = 0; i < signatureFileContentSplit.length; i++) {
-                            if(signatureFileContentSplit[i][0] === currentFile &&
-                                signatureFileContentSplit[i][1] === currentHash) {
-                                doTinifyImg = false;
-                            }
-                        }
-
-                        if(doTinifyImg === true) {
-                            console.log(file + '\n --> tinify');
-                            tinify.fromFile(currentFile).toFile('dist/img/' + file);
-                        } else {
-                            console.log(file + '\n --> was already tinified: do nothing')
-                        }
-                        appendHashToSignatureFile(currentFile, currentHash);
-                    });
-                } else {
-                    console.log(file + '\n --> copy to dest folder');
-                    fs.createReadStream('src/img/' + file).pipe(fs.createWriteStream('dist/img/' + file));
+                for(let i = 0; i < signatureFileContentSplit.length; i++) {
+                    if(signatureFileContentSplit[i][0] === currentFile &&
+                        signatureFileContentSplit[i][1] === currentHash) {
+                        doTinifyImg = false;
+                    }
                 }
-            }
-        });
+
+                if(doTinifyImg === true) {
+                    console.log(file + '\n --> tinify');
+                    tinify.fromFile(currentFile).toFile(file.replace('src', 'dist'));
+                } else {
+                    console.log(file + '\n --> was already tinified: do nothing')
+                }
+                appendHashToSignatureFile(currentFile, currentHash);
+            });
+        } else {
+            console.log(file + '\n --> copy to dest folder');
+            fs.createReadStream(file).pipe(fs.createWriteStream(file.replace('src', 'dist')));
+        }
     });
 }
 
