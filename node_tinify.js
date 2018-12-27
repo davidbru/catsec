@@ -52,7 +52,7 @@ checkSignatureFile();
 
 function checkSignatureFile() {
     if (fs.existsSync(signatureFile)) {
-        console.log('signature file does exist --> check hashes\n---- ---- ---- ---- ----');
+        // console.log('signature file does exist --> check hashes\n---- ---- ---- ---- ----');
         fs.readFile(signatureFile, 'utf8', function (err, data) {
             if (err) {
                 return console.log(err);
@@ -70,7 +70,7 @@ function checkSignatureFile() {
             loopThroughFiles();
         });
     } else {
-        console.log('signature file does NOT exist --> tinify all images\n---- ---- ---- ---- ----');
+        // console.log('signature file does NOT exist --> tinify all images\n---- ---- ---- ---- ----');
         loopThroughFiles();
     }
 }
@@ -99,10 +99,10 @@ function loopThroughFiles() {
                 }
 
                 if(doTinifyImg === true) {
-                    console.log(file + '\n --> tinify');
+                    // console.log(file + '\n --> tinify');
                     tinify.fromFile(currentFile).toFile(file.replace('src', 'dist'));
                 } else {
-                    console.log(file + '\n --> was already tinified: do nothing')
+                    // console.log(file + '\n --> was already tinified: do nothing')
                 }
                 signatureFileContentNewSplit1.push(currentFile + ':' + currentHash + ';');
                 if(counter === files.length) {
@@ -111,7 +111,7 @@ function loopThroughFiles() {
                 counter ++;
             });
         } else {
-            console.log(file + '\n --> copy to dest folder');
+            // console.log(file + '\n --> copy to dest folder');
             fs.createReadStream(file).pipe(fs.createWriteStream(file.replace('src', 'dist')));
 
             if(counter === files.length) {
@@ -131,7 +131,7 @@ function writeSignatureFileIfNecessary() {
     });
 
     if(signatureFileContentOld !== signatureFileContentNew) {
-        console.log('write sig file');
+        // console.log('write sig file');
         fs.writeFile(signatureFile, signatureFileContentNew, function () {});
     }
 }

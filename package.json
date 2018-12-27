@@ -13,7 +13,7 @@
     "build:img": "npm run tinify",
     "build:js": "npm run jshint && npm run uglify",
     "build:css": "npm run sass",
-    "build": "npm run clean && npm run copy && npm run build:js && npm run build:css && npm run build:img",
+    "build": "npm run clean && npm run copy && npm run build:js && npm run build:css && npm run build:img && echo 'BUILD FINISHED'",
     "watch": "watch 'npm run build' ./src"
   },
   "repository": {
