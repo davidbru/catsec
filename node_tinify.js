@@ -10,8 +10,11 @@ let folders = [];
 
 tinify.key = secrets['tinifyApiKey'];
 
-let signatureFileContent;
-let signatureFileContentSplit = [];
+let signatureFileContentOld;
+let signatureFileContentOldSplit1 = [];
+let signatureFileContentOldSplit2 = [];
+let signatureFileContentNew = '';
+let signatureFileContentNewSplit1 = [];
 const signatureFile = imgSrcFolder+'/.tinypng-sigs';
 
 
@@ -54,14 +57,16 @@ function checkSignatureFile() {
             if (err) {
                 return console.log(err);
             }
-            signatureFileContent = data.split(';');
-            for(let i = 0; i < signatureFileContent.length; i++) {
-                if(signatureFileContent[i] !== '') {
-                    let tmp = signatureFileContent[i].split(':');
-                    signatureFileContentSplit.push(tmp);
+            signatureFileContentOld = data;
+            signatureFileContentOldSplit1 = signatureFileContentOld.split(';').sort(function (a, b) {
+                return a.localeCompare(b);
+            });
+            for(let i = 0; i < signatureFileContentOldSplit1.length; i++) {
+                if(signatureFileContentOldSplit1[i] !== '') {
+                    let tmp = signatureFileContentOldSplit1[i].split(':');
+                    signatureFileContentOldSplit2.push(tmp);
                 }
             }
-            deleteSignatureFile();
             loopThroughFiles();
         });
     } else {
@@ -72,6 +77,7 @@ function checkSignatureFile() {
 
 
 function loopThroughFiles() {
+    let counter = 1;
     files.forEach(file => {
         if (path.extname(file) === '.jpg' ||
             path.extname(file) === '.jpeg' ||
@@ -85,9 +91,9 @@ function loopThroughFiles() {
             on('finish', function () {
                 currentHash = this.read();
 
-                for(let i = 0; i < signatureFileContentSplit.length; i++) {
-                    if(signatureFileContentSplit[i][0] === currentFile &&
-                        signatureFileContentSplit[i][1] === currentHash) {
+                for(let i = 0; i < signatureFileContentOldSplit2.length; i++) {
+                    if(signatureFileContentOldSplit2[i][0] === currentFile &&
+                        signatureFileContentOldSplit2[i][1] === currentHash) {
                         doTinifyImg = false;
                     }
                 }
@@ -98,25 +104,34 @@ function loopThroughFiles() {
                 } else {
                     console.log(file + '\n --> was already tinified: do nothing')
                 }
-                appendHashToSignatureFile(currentFile, currentHash);
+                signatureFileContentNewSplit1.push(currentFile + ':' + currentHash + ';');
+                if(counter === files.length) {
+                    writeSignatureFileIfNecessary();
+                }
+                counter ++;
             });
         } else {
             console.log(file + '\n --> copy to dest folder');
             fs.createReadStream(file).pipe(fs.createWriteStream(file.replace('src', 'dist')));
+
+            if(counter === files.length) {
+                writeSignatureFileIfNecessary();
+            }
+            counter ++;
         }
     });
 }
 
 
-function deleteSignatureFile() {
-    fs.unlink(signatureFile, (err) => {
-        if (err) throw err;
-        // console.log(signatureFile + ' was deleted');
+function writeSignatureFileIfNecessary() {
+    signatureFileContentNewSplit1.sort(function (a, b) {
+        return a.localeCompare(b);
+    }).forEach(part => {
+        signatureFileContentNew += part;
     });
-}
 
-
-function appendHashToSignatureFile(file, hash) {
-    signatureFileContent = file + ':' + hash + ';';
-    fs.appendFile(signatureFile, signatureFileContent, function () {});
+    if(signatureFileContentOld !== signatureFileContentNew) {
+        console.log('write sig file');
+        fs.writeFile(signatureFile, signatureFileContentNew, function () {});
+    }
 }
