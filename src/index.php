@@ -12,12 +12,19 @@ include_once('./scripts/data.php');
     <link rel="stylesheet" type="text/css" href="css/styles.min.css" media="all">
 </head>
 <body>
-<div class="bg-dark">
+<header id="container_header" class="bg-dark">
     <div class="container text-white">
-        <h1><small>Curriculum Vitae</small><br />David Brunnthaler</h1>
+        <div class="row">
+            <div class="col-12 col-sm-2 d-flex flex-wrap align-items-center mt-3 mt-sm-0">
+                <img src="img/logo_db.svg" alt="Logo David Brunnthaler" title="Logo David Brunnthaler" />
+            </div>
+            <div class="col-12 col-sm-10">
+                <h1><small>Curriculum Vitae</small><br />David Brunnthaler</h1>
+            </div>
+        </div>
     </div>
-</div>
-<div class="container">
+</header>
+<main class="container">
     <h2 class="mt-5">Events</h2>
         <?php
         $counter = 0;
@@ -98,25 +105,27 @@ include_once('./scripts/data.php');
     <?php
     foreach($courseData AS $university => $coursesGroups) {
         echo '
-                        <h3>'.$university.'</h3>
-                        <table>
+                        <h3 class="mt-4">'.$university.'</h3>
                     ';
         foreach($coursesGroups AS $courseGroup) {
             echo '
-                            <tr><td colspan="2"><h4>'.$courseGroup['title'].'</h4></td></tr>
+                            <h4 class="mt-3">'.$courseGroup['title'].'</h4>
                         ';
+            $counter = 0;
             foreach($courseGroup['courses'] AS $course) {
+                $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
+                if($counter == 0) {
+                    $rowClasses[] = 'border-top';
+                }
                 echo '
-                                <tr>
-                                    <td>'.$course['points'].'</td>
-                                    <td>'.$course['title'].'</td>
-                                </tr>
+                                <div class="'.implode(' ', $rowClasses).'">
+                                    <div class="col-1">'.$course['points'].'</div>
+                                    <div class="col-11">'.$course['title'].'</div>
+                                </div>
                             ';
+                $counter ++;
             }
         }
-        echo '
-                        </table>
-                    ';
     }
     ?>
 
@@ -130,6 +139,6 @@ include_once('./scripts/data.php');
         }
         ?>
     </ul>
-</div>
+</main>
 </body>
 </html>

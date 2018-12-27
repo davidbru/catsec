@@ -1,5 +1,13 @@
 @import 'bootstrap/bootstrap';
 
+#container_header {
+    img {
+        width: 100%;
+        max-width:70px;
+        height: auto;
+    }
+}
+
 .podcasts {
     margin: 0;
     padding: 0;

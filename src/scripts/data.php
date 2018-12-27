@@ -139,13 +139,13 @@ $works = array(
         'start_date' => '2012-04-01',
         'end_date' => 'ongoing',
         'title' => 'screencode GmbH',
-        'addinfo' => 'chief executive officer',
+        'addinfo' => 'Chief Executive Officer',
         'url' => 'https://www.screencode.at'
     ),
     20050101 => array(
         'start_date' => '2005-01-01',
         'end_date' => '20120331',
-        'title' => 'independent web developer'
+        'title' => 'Independent Web Developer'
     ),
 );
 krsort($works);
