@@ -92,20 +92,23 @@ include_once('./scripts/data.php');
         foreach($educations AS $education) {
             $lc_studyCourse = strtolower(str_replace(' ', '_', $education['study_course']));
             echo '
-                <div class="row pt-1 pb-1 border-bottom border-top">
+                <div class="row pt-1 border-top">
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'<br /><a href="javascript:void(0)" id="clickTarget_'.$lc_studyCourse.'">Zeige ECTS-Punkte</a>
+                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
                         '.(isset($education['location'])?$education['location']:'').'
                     </div>
                 </div>
+                <div class="row pb-1 border-bottom">
+                    <div class="col-12 text-right"><a href="javascript:void(0)" class="ectsClickTarget">Zeige ECTS-Punkte</a></div>
+                </div>
                 ';
 
-            echo '<div id="container_ects_'.$lc_studyCourse.'" class="container_ects mb-5">';
+            echo '<div class="container_ects mb-5">';
             foreach($education['ects'] AS $courseGroup) {
                 echo '
                             <h4 class="mt-3 offset-1 offset-md-2 offset-lg-1">'.$courseGroup['title'].'</h4>
