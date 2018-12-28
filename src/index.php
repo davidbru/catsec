@@ -21,6 +21,7 @@ include_once('./scripts/data.php');
     <meta name="msapplication-TileColor" content="#b91d47">
     <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <script defer src="/js/scripts.min.js"></script>
 </head>
 <body>
 <ul id="skiplinks" class="sr-only">
@@ -162,7 +163,5 @@ include_once('./scripts/data.php');
         ?>
     </ul>
 </main>
-
-<script src="/js/scripts.min.js"></script>
 </body>
 </html>
