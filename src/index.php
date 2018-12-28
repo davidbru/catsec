@@ -35,7 +35,7 @@ include_once('./scripts/data.php');
     </div>
 </header>
 <main class="container">
-    <h2 class="mt-5">Events</h2>
+    <h2 class="mt-5">Veranstaltungen</h2>
         <?php
         $counter = 0;
         foreach($events AS $event) {
@@ -61,7 +61,7 @@ include_once('./scripts/data.php');
         }
         ?>
 
-    <h2 class="mt-5">Work</h2>
+    <h2 class="mt-5">Arbeit</h2>
         <?php
         $counter = 0;
         foreach($works AS $work) {
@@ -86,7 +86,7 @@ include_once('./scripts/data.php');
         }
         ?>
 
-    <h2 class="mt-5">Education</h2>
+    <h2 class="mt-5">Ausbildung</h2>
         <?php
         $counter = 0;
         foreach($educations AS $education) {
@@ -100,7 +100,7 @@ include_once('./scripts/data.php');
                     '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'
+                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'<br /><a href="javascript:void(0)" id="clickTarget_'.strtolower(str_replace(' ', '_', $education['study_course'])).'">Zeige ECTS-Punkte</a>
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
                         '.(isset($education['location'])?$education['location']:'').'
@@ -111,12 +111,10 @@ include_once('./scripts/data.php');
         }
         ?>
 
-    <h2 class="mt-5">ECTS</h2>
     <?php
     foreach($courseData AS $university => $coursesGroups) {
-        echo '
-                        <h3 class="mt-4">'.$university.'</h3>
-                    ';
+        echo '<div id="container_ects_'.strtolower(str_replace(' ', '_', $university)).'" class="container_ects">
+                <h2 class="mt-5">ECTS Punkte - '.$university.'</h2>';
         foreach($coursesGroups AS $courseGroup) {
             echo '
                             <h4 class="mt-3">'.$courseGroup['title'].'</h4>
@@ -136,6 +134,7 @@ include_once('./scripts/data.php');
                 $counter ++;
             }
         }
+        echo '</div>';
     }
     ?>
 
@@ -150,5 +149,7 @@ include_once('./scripts/data.php');
         ?>
     </ul>
 </main>
+
+<script src="/js/scripts.min.js"></script>
 </body>
 </html>
