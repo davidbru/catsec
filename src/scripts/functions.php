@@ -27,6 +27,6 @@
 
 
     function wrapInExtLink($content, $link = NULL) {
-        $html = (isset($link)?'<a href="'.$link.'" target="_blank">'.$content.'</a>':$content);
+        $html = (isset($link)?'<a href="'.$link.'" target="_blank" rel="noreferrer">'.$content.'</a>':$content);
         return $html;
     }
