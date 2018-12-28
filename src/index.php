@@ -8,6 +8,7 @@ include_once('./scripts/data.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="description" content="Lebenslauf von David Brunnthaler">
     <title>David Brunnthaler - Curriculum Vitae</title>
     <link rel="stylesheet" type="text/css" href="css/styles.min.css" media="all">
 
