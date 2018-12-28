@@ -10,7 +10,7 @@
 
 .container_ects {
     max-height:0;
-    overflow: hidden;
+    overflow-y: hidden;
 
     transition: max-height 500ms ease-in-out;
 

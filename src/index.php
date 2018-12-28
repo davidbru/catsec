@@ -87,14 +87,14 @@ include_once('./scripts/data.php');
         ?>
 
     <h2 class="mt-5">Ausbildung</h2>
-        <?php
-        $counter = 0;
-        foreach($educations AS $education) {
-            $lc_studyCourse = strtolower(str_replace(' ', '_', $education['study_course']));
-            echo '
+    <?php
+    $counter = 0;
+    foreach($educations AS $education) {
+        $lc_studyCourse = strtolower(str_replace(' ', '_', $education['study_course']));
+        echo '
                 <div class="row pt-1 border-top">
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-                    '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
+                        '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
                         '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'
@@ -103,37 +103,44 @@ include_once('./scripts/data.php');
                         '.(isset($education['location'])?$education['location']:'').'
                     </div>
                 </div>
-                <div class="row pb-1 border-bottom">
+                <div class="row pb-1">
                     <div class="col-12 text-right"><a href="javascript:void(0)" class="ectsClickTarget">Zeige ECTS-Punkte</a></div>
                 </div>
                 ';
 
-            echo '<div class="container_ects mb-5">';
-            foreach($education['ects'] AS $courseGroup) {
-                echo '
-                            <h4 class="mt-3 offset-1 offset-md-2 offset-lg-1">'.$courseGroup['title'].'</h4>
-                        ';
-                $counterInner = 0;
-                foreach($courseGroup['courses'] AS $course) {
-                    $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom', 'offset-1', 'offset-md-2', 'offset-lg-1');
-                    if($counterInner == 0) {
-                        $rowClasses[] = 'border-top';
-                    }
-                    echo '
-                                <div class="'.implode(' ', $rowClasses).'">
-                                    <div class="col-1">'.$course['points'].'</div>
-                                    <div class="col-11">'.$course['title'].'</div>
-                                </div>
-                            ';
-                    $counterInner ++;
+        echo '<div class="row container_ects"><div class="col-12 border-top">';
+        $counterEctsOuter = 0;
+        foreach($education['ects'] AS $courseGroup) {
+            echo '<h4 class="mt-3 offset-1 offset-md-2 offset-lg-1">'.$courseGroup['title'].'</h4>';
+            $counterEctsInner = 0;
+            foreach($courseGroup['courses'] AS $course) {
+                $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom', 'offset-1', 'offset-md-2', 'offset-lg-1');
+                if($counterEctsInner == 0) {
+                    $rowClasses[] = 'border-top';
                 }
-            }
-
-            echo '
-                </div>
+                if($counterEctsOuter === (sizeof($education['ects'])-1) && $counterEctsInner === (sizeof($courseGroup['courses'])-1)) {
+                    $rowClasses[] = 'mb-5';
+                }
+                echo '
+                    <div class="'.implode(' ', $rowClasses).'">
+                        <div class="col-1">'.$course['points'].'</div>
+                        <div class="col-11">'.$course['title'].'</div>
+                    </div>
                 ';
+                $counterEctsInner ++;
+            }
+            $counterEctsOuter ++;
         }
-        ?>
+
+        echo '</div></div>';
+
+        if($counter !== 0) {
+            echo '<div class="row border-bottom"></div>';
+        }
+
+        $counter ++;
+    }
+    ?>
 
     <h2 class="mt-5">Podcasts</h2>
     <ul class="podcasts row m-0 p-0">
