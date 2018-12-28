@@ -57,7 +57,7 @@ include_once('./scripts/data.php');
                         <small>'.formatDateRange($event['start_date'], (isset($event['end_date'])?$event['end_date']:NULL)).'</small>
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        <a href="'.$event['url'].'" target="_blank">'.$event['title'].'</a>
+                        '.wrapInExtLink($event['title'], (isset($event['url'])?$event['url']:NULL)).'
                         '.(isset($event['addinfo'])?'<small>'.$event['addinfo'].'</small>':'').'
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
@@ -83,7 +83,7 @@ include_once('./scripts/data.php');
                         <small>'.formatDateRange($work['start_date'], (isset($work['end_date'])?$work['end_date']:NULL)).'</small>
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.(isset($work['url'])?'<a href="'.$work['url'].'" target="_blank">'.$work['title'].'</a>':$work['title']).'
+                        '.wrapInExtLink($work['title'], (isset($work['url'])?$work['url']:NULL)).'
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
                         '.(isset($work['addinfo'])?$work['addinfo']:'').'
@@ -104,8 +104,9 @@ include_once('./scripts/data.php');
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                         '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
                     </div>
-                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'
+                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">'.
+                        wrapInExtLink($education['university'].' - '.$education['study_course'], (isset($education['url'])?$education['url']:NULL)).
+                        (isset($education['degree'])?'<br />'.$education['degree']:'').'
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
                         '.(isset($education['location'])?$education['location']:'').'
