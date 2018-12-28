@@ -90,53 +90,47 @@ include_once('./scripts/data.php');
         <?php
         $counter = 0;
         foreach($educations AS $education) {
-            $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
-            if($counter == 0) {
-                $rowClasses[] = 'border-top';
-            }
+            $lc_studyCourse = strtolower(str_replace(' ', '_', $education['study_course']));
             echo '
-                <div class="'.implode(' ', $rowClasses).'">
+                <div class="row pt-1 pb-1 border-bottom border-top">
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                     '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'<br /><a href="javascript:void(0)" id="clickTarget_'.strtolower(str_replace(' ', '_', $education['study_course'])).'">Zeige ECTS-Punkte</a>
+                        '.(isset($education['url'])?'<a href="'.$education['url'].'" target="_blank">'.$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'').'</a>':$education['university'].' - '.(isset($education['study_course'])?$education['study_course']:'')).(isset($education['degree'])?'<br />'.$education['degree']:'').'<br /><a href="javascript:void(0)" id="clickTarget_'.$lc_studyCourse.'">Zeige ECTS-Punkte</a>
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
                         '.(isset($education['location'])?$education['location']:'').'
                     </div>
                 </div>
                 ';
-            $counter ++;
-        }
-        ?>
 
-    <?php
-    foreach($courseData AS $university => $coursesGroups) {
-        echo '<div id="container_ects_'.strtolower(str_replace(' ', '_', $university)).'" class="container_ects">
-                <h2 class="mt-5">ECTS Punkte - '.$university.'</h2>';
-        foreach($coursesGroups AS $courseGroup) {
-            echo '
-                            <h4 class="mt-3">'.$courseGroup['title'].'</h4>
-                        ';
-            $counter = 0;
-            foreach($courseGroup['courses'] AS $course) {
-                $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
-                if($counter == 0) {
-                    $rowClasses[] = 'border-top';
-                }
+            echo '<div id="container_ects_'.$lc_studyCourse.'" class="container_ects mb-5">';
+            foreach($education['ects'] AS $courseGroup) {
                 echo '
+                            <h4 class="mt-3 offset-1 offset-md-2 offset-lg-1">'.$courseGroup['title'].'</h4>
+                        ';
+                $counterInner = 0;
+                foreach($courseGroup['courses'] AS $course) {
+                    $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom', 'offset-1', 'offset-md-2', 'offset-lg-1');
+                    if($counterInner == 0) {
+                        $rowClasses[] = 'border-top';
+                    }
+                    echo '
                                 <div class="'.implode(' ', $rowClasses).'">
                                     <div class="col-1">'.$course['points'].'</div>
                                     <div class="col-11">'.$course['title'].'</div>
                                 </div>
                             ';
-                $counter ++;
+                    $counterInner ++;
+                }
             }
+
+            echo '
+                </div>
+                ';
         }
-        echo '</div>';
-    }
-    ?>
+        ?>
 
     <h2 class="mt-5">Podcasts</h2>
     <ul class="podcasts row m-0 p-0">
