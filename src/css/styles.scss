@@ -1,4 +1,14 @@
+$blue: #0050d0 !default;
+
 @import 'bootstrap/bootstrap';
+
+
+a {
+    &:focus,
+    &:hover {
+        text-decoration:underline;
+    }
+}
 
 #container_header {
     img {

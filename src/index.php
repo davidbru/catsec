@@ -121,7 +121,7 @@ include_once('./scripts/data.php');
         echo '<div class="row container_ects"><div class="col-12 border-top">';
         $counterEctsOuter = 0;
         foreach($education['ects'] AS $courseGroup) {
-            echo '<h4 class="mt-3 offset-1 offset-md-2 offset-lg-1">'.$courseGroup['title'].'</h4>';
+            echo '<h3 class="mt-3 offset-1 offset-md-2 offset-lg-1">'.$courseGroup['title'].'</h3>';
             $counterEctsInner = 0;
             foreach($courseGroup['courses'] AS $course) {
                 $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom', 'offset-1', 'offset-md-2', 'offset-lg-1');
