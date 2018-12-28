@@ -2,14 +2,15 @@ var elEctsClickTargets = document.getElementsByClassName('ectsClickTarget');
 var elEctsContainers = document.getElementsByClassName('container_ects');
 
 for(var i = 0; i < elEctsClickTargets.length; i++) {
-    elEctsClickTargets.item(i).onclick = function(console, i, elEctsContainers, toggleClass, removeClass) {
+    elEctsClickTargets.item(i).onclick = function(console, i, elEctsContainers, toggleClass, removeClass, correctEctsLinkTexts) {
         var j = 0;
         if(i === 0) {
             j = 1;
         }
         removeClass(elEctsContainers.item(j));
         toggleClass(elEctsContainers.item(i));
-    }.bind(null, console, i, elEctsContainers, toggleClass, removeClass);
+        correctEctsLinkTexts();
+    }.bind(null, console, i, elEctsContainers, toggleClass, removeClass, correctEctsLinkTexts);
 }
 
 
@@ -39,4 +40,20 @@ function removeClass(el) {
         el.classList.remove(className);
     else
         el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+}
+
+
+function correctEctsLinkTexts() {
+    for(var i = 0; i < elEctsContainers.length; i++) {
+        var linkText = 'Zeige ECTS-Punkte';
+        var el = elEctsContainers.item(i);
+        var className = 'open';
+
+        if (el.classList.contains(className)) {
+            linkText = 'Verstecke ECTS-Punkte';
+        }
+        setTimeout(function(elEctsClickTargets, i, linkText) {
+            elEctsClickTargets.item(i).innerHTML = linkText;
+        }.bind(null, elEctsClickTargets, i, linkText), 250);
+    }
 }
