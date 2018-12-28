@@ -22,6 +22,13 @@ include_once('./scripts/data.php');
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+<ul id="skiplinks" class="sr-only">
+    <li><a href="/#events">Zu den Veranstaltungen</a></li>
+    <li><a href="/#work">Zur Arbeit</a></li>
+    <li><a href="/#education">Zur Ausbildung</a></li>
+    <li><a href="/#podcasts">Zu den Podcasts</a></li>
+</ul>
+
 <header id="container_header" class="bg-dark">
     <div class="container text-white">
         <div class="row">
@@ -35,7 +42,7 @@ include_once('./scripts/data.php');
     </div>
 </header>
 <main class="container">
-    <h2 class="mt-5">Veranstaltungen</h2>
+    <h2 class="mt-5" id="events">Veranstaltungen</h2>
         <?php
         $counter = 0;
         foreach($events AS $event) {
@@ -61,7 +68,7 @@ include_once('./scripts/data.php');
         }
         ?>
 
-    <h2 class="mt-5">Arbeit</h2>
+    <h2 class="mt-5" id="work">Arbeit</h2>
         <?php
         $counter = 0;
         foreach($works AS $work) {
@@ -86,7 +93,7 @@ include_once('./scripts/data.php');
         }
         ?>
 
-    <h2 class="mt-5">Ausbildung</h2>
+    <h2 class="mt-5" id="education">Ausbildung</h2>
     <?php
     $counter = 0;
     foreach($educations AS $education) {
@@ -142,7 +149,7 @@ include_once('./scripts/data.php');
     }
     ?>
 
-    <h2 class="mt-5">Podcasts</h2>
+    <h2 class="mt-5" id="podcasts">Podcasts</h2>
     <ul class="podcasts row m-0 p-0">
         <?php
         foreach($podcasts AS $podcast) {
