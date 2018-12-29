@@ -166,7 +166,7 @@ $works = array(
     20050101 => array(
         'start_date' => '2005-01-01',
         'end_date' => '20120331',
-        'title' => 'Independent Web Developer',
+        'title' => 'Selbstständiger Web Entwickler',
         'addinfo' => array(
             'Erstellung individueller Webseiten',
             'Klientel: Kleine Unternehmen',
