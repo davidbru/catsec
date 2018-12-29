@@ -195,7 +195,7 @@ $skills = array(
         'Vue.js', 'Bootstrap'
     ),
     'Diverses' => array(
-        'Node.js', 'Vim', 'Sass', 'Drush', 'Git', 'Grafana'
+        'Node.js', 'Vim', 'Sass', 'Drush', 'Git', 'Virtualbox', 'Grafana'
     ),
     'Paket&shy;verwaltung' => array(
         'npm', 'Composer', 'Homebrew', 'pip'
@@ -205,6 +205,9 @@ $skills = array(
     ),
     'Hard&shy;ware' => array(
         'Apple', 'MikroTik', 'Raspberry PI'
+    ),
+    'Security Toolkits' => array(
+        'Wireshark', 'Burp Suite', 'Aircrack', 'John the Ripper', 'Nmap'
     )
 );
 
