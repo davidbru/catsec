@@ -430,4 +430,4 @@ $podcasts = array(
         'img' => 'working-draft.png'
     )
 );
-usort($podcasts, 'cmpTitleAsc');
+usort($podcasts, array('Utils', 'cmpTitleAsc'));

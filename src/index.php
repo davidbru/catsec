@@ -1,6 +1,6 @@
 <?php
 
-include_once('./scripts/functions.php');
+include_once('./scripts/Utils.php');
 include_once('./scripts/data.php');
 
 ?><!DOCTYPE html>
@@ -58,10 +58,10 @@ include_once('./scripts/data.php');
             echo '
                 <div class="'.implode(' ', $rowClasses).'">
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-                        <small>'.formatDateRange($event['start_date'], (isset($event['end_date'])?$event['end_date']:NULL)).'</small>
+                        <small>'.Utils::formatDateRange($event['start_date'], (isset($event['end_date'])?$event['end_date']:NULL)).'</small>
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.wrapInExtLink($event['title'], (isset($event['url'])?$event['url']:NULL)).'
+                        '.Utils::wrapInExtLink($event['title'], (isset($event['url'])?$event['url']:NULL)).'
                         '.(isset($event['addinfo'])?'<small>'.$event['addinfo'].'</small>':'').'
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
@@ -86,10 +86,10 @@ include_once('./scripts/data.php');
             echo '
                 <div class="'.implode(' ', $rowClasses).'">
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-                        <small>'.formatDateRange($work['start_date'], (isset($work['end_date'])?$work['end_date']:NULL)).'</small>
+                        <small>'.Utils::formatDateRange($work['start_date'], (isset($work['end_date'])?$work['end_date']:NULL)).'</small>
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.wrapInExtLink($work['title'], (isset($work['url'])?$work['url']:NULL)).'
+                        '.Utils::wrapInExtLink($work['title'], (isset($work['url'])?$work['url']:NULL)).'
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
                         '.(isset($work['addinfo'])?$work['addinfo']:'').'
@@ -110,10 +110,10 @@ include_once('./scripts/data.php');
             echo '
                     <div class="row pt-1 border-top">
                         <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-                            '.formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
+                            '.Utils::formatDateRange($education['start_date'], (isset($education['end_date'])?$education['end_date']:NULL)).'
                         </div>
                         <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">'.
-                            wrapInExtLink($education['university'].' - '.$education['study_course'], (isset($education['url'])?$education['url']:NULL)).
+                            Utils::wrapInExtLink($education['university'].' - '.$education['study_course'], (isset($education['url'])?$education['url']:NULL)).
                             (isset($education['degree'])?'<br />'.$education['degree']:'').'
                         </div>
                         <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
@@ -166,12 +166,32 @@ include_once('./scripts/data.php');
             <?php
             foreach($podcasts AS $podcast) {
                 echo '<li class="col-12 col-sm-6 col-md-4 col-lg-3 pb-3"><div>'.
-                    wrapInExtLink('<img src="/img/'.$podcast['img'].'" alt="'.$podcast['title'].' Podcast Cover Bild" title="'.$podcast['title'].' Podcast Cover Bild" /><div class="text">'.$podcast['title'].'</div>', (isset($podcast['url'])?$podcast['url']:NULL)).
+                    Utils::wrapInExtLink('<img src="/img/'.$podcast['img'].'" alt="'.$podcast['title'].' Podcast Cover Bild" title="'.$podcast['title'].' Podcast Cover Bild" /><div class="text">'.$podcast['title'].'</div>', (isset($podcast['url'])?$podcast['url']:NULL)).
                     '</div></li>';
             }
             ?>
         </ul>
     </section>
 </main>
+
+<footer id="container_footer" class="bg-dark mt-5">
+    <div class="container text-white pt-2 pb-2">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <strong>David Brunnthaler</strong><br />
+                <a href="mailto:david@screencode.at" class="text-white">david@screencode.at</a><br />
+                <a href="tel:+436649113740" class="text-white">+43 664 911 37 40</a>
+            </div>
+            <div class="col-12 col-sm-6 text-right">
+                <br />
+                <a href="mailto:david@screencode.at" class="text-white">mail</a>
+                <?php
+                echo Utils::wrapInExtLink('twitter', 'https://twitter.com/david_bru', 'text-white').' '.
+                    Utils::wrapInExtLink('github', 'https://github.com/davidbru', 'text-white');
+                ?>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
