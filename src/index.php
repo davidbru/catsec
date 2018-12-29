@@ -27,6 +27,7 @@ include_once('./scripts/data.php');
 <nav>
     <ul id="skiplinks" class="sr-only">
         <li><a href="/#work">Zur Arbeit</a></li>
+        <li><a href="/#skills">Zu den Kompetenzen</a></li>
         <li><a href="/#education">Zur Ausbildung</a></li>
         <li><a href="/#events">Zu den Veranstaltungen</a></li>
         <li><a href="/#podcasts">Zu den Podcasts</a></li>
@@ -46,8 +47,8 @@ include_once('./scripts/data.php');
     </div>
 </header>
 <main class="container">
-    <section>
-        <h2 class="mt-5" id="work">Arbeit</h2>
+    <section id="work">
+        <h2 class="mt-5">Arbeit</h2>
         <?php
         $counter = 0;
         foreach($works AS $work) {
@@ -60,12 +61,9 @@ include_once('./scripts/data.php');
                     <div class="col-12 col-sm-4 col-md-3 col-lg-2">
                         <small>'.Utils::formatDateRange($work['start_date'], (isset($work['end_date'])?$work['end_date']:NULL)).'</small>
                     </div>
-                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
+                    <div class="offset-1 col-11 offset-sm-0 col-sm-8 col-md-9 col-lg-10">
                         '.Utils::wrapInExtLink($work['title'], (isset($work['url'])?$work['url']:NULL)).'
-                        '.(isset($work['focus'])?'<ul class="mb-0"><li>'.implode('</li><li>', $work['focus']).'</li></ul>':'').'
-                    </div>
-                    <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
-                        '.(isset($work['addinfo'])?$work['addinfo']:'').'
+                        '.(isset($work['addinfo'])?'<ul class="mb-0"><li>'.implode('</li><li>', $work['addinfo']).'</li></ul>':'').'
                     </div>
                 </div>
                 ';
@@ -74,8 +72,32 @@ include_once('./scripts/data.php');
         ?>
     </section>
 
-    <section>
-        <h2 class="mt-5" id="education">Ausbildung</h2>
+    <section id="skills">
+        <h2 class="mt-5">Kompetenzen</h2>
+        <?php
+        $counter = 0;
+        foreach($skills AS $skillGroupKey => $skillGroupValue) {
+            $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
+            if($counter == 0) {
+                $rowClasses[] = 'border-top';
+            }
+            echo '
+                <div class="'.implode(' ', $rowClasses).'">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
+                        <small>'.$skillGroupKey.'</small>
+                    </div>
+                    <div class="offset-1 col-11 offset-sm-0 col-sm-8 col-md-9 col-lg-10">
+                        '.implode(', ', $skillGroupValue).'
+                    </div>
+                </div>
+                ';
+            $counter ++;
+        }
+        ?>
+    </section>
+
+    <section id="education">
+        <h2 class="mt-5">Ausbildung</h2>
         <?php
         $counter = 0;
         foreach($educations AS $education) {
@@ -134,8 +156,8 @@ include_once('./scripts/data.php');
         ?>
     </section>
 
-    <section>
-        <h2 class="mt-5" id="events">Veranstaltungen</h2>
+    <section id="events">
+        <h2 class="mt-5">Veranstaltungen</h2>
         <?php
         $counter = 0;
         foreach($events AS $event) {
@@ -162,8 +184,8 @@ include_once('./scripts/data.php');
         ?>
     </section>
 
-    <section>
-        <h2 class="mt-5" id="podcasts">Podcasts</h2>
+    <section id="podcasts">
+        <h2 class="mt-5">Podcasts</h2>
         <ul class="podcasts row m-0 p-0">
             <?php
             foreach($podcasts AS $podcast) {

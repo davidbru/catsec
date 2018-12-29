@@ -139,9 +139,9 @@ $works = array(
         'start_date' => '2012-04-01',
         'end_date' => 'ongoing',
         'title' => 'screencode GmbH',
-        'addinfo' => 'Geschäfts&shy;führer',
         'url' => 'https://www.screencode.at',
-        'focus' => array(
+        'addinfo' => array(
+            'Geschäftsführer',
             'Erstellung individueller Webseiten und Apps',
             'Klientel: Kleine und mittlere Unternehmen
             <ul>
@@ -151,7 +151,7 @@ $works = array(
             <li>'.Utils::wrapInExtLink('ALK-Abelló', 'https://www.alk.net/at/').'</li>
             <li>'.Utils::wrapInExtLink('Medizinische Universität Wien', 'https://www.pollenwarndienst.at/').'</li>
             </ul>',
-            'Technologie: 
+            'Technologien: 
                 <ul>
                 <li>PHP <small>5.6+</small></li>
                 <li>TYPO3 <small>4.5+</small></li>
@@ -167,10 +167,10 @@ $works = array(
         'start_date' => '2005-01-01',
         'end_date' => '20120331',
         'title' => 'Independent Web Developer',
-        'focus' => array(
+        'addinfo' => array(
             'Erstellung individueller Webseiten',
             'Klientel: Kleine Unternehmen',
-            'Technologie: 
+            'Technologien: 
                 <ul>
                 <li>PHP <small>5.6+</small></li>
                 <li>TYPO3 <small>4.5+</small></li>
@@ -179,6 +179,34 @@ $works = array(
     ),
 );
 krsort($works);
+
+
+$skills = array(
+    'Programmier&shy;sprachen' => array(
+        'PHP', 'Python'
+    ),
+    'Daten&shy;banken' => array(
+        'MySQL', 'MariaDB', 'PostgreSQL'
+    ),
+    'CMS' => array(
+        'TYPO3', 'Wordpress', 'Drupal'
+    ),
+    'Frame&shy;work' => array(
+        'Vue.js', 'Bootstrap'
+    ),
+    'Diverses' => array(
+        'Node.js', 'Vim', 'Sass', 'Drush', 'Git', 'Grafana'
+    ),
+    'Paket&shy;verwaltung' => array(
+        'npm', 'Composer', 'Homebrew', 'pip'
+    ),
+    'Betriebs&shy;systeme' => array(
+        'macOS', 'Windows', 'Ubuntu', 'Raspbian', 'Kali Linux'
+    ),
+    'Hard&shy;ware' => array(
+        'Apple', 'MikroTik', 'Raspberry PI'
+    )
+);
 
 
 $educations = array(
