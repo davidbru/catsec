@@ -206,13 +206,12 @@ include_once('./scripts/data.php');
                 <a href="mailto:david@screencode.at" class="text-white">david@screencode.at</a><br />
                 <a href="tel:+436649113740" class="text-white">+43 664 911 37 40</a>
             </div>
-            <div class="col-12 col-sm-6 text-right">
-                <br />
-                <a href="mailto:david@screencode.at" class="text-white">mail</a>
-                <?php
-                echo Utils::wrapInExtLink('twitter', 'https://twitter.com/david_bru', 'text-white').' '.
-                    Utils::wrapInExtLink('github', 'https://github.com/davidbru', 'text-white');
-                ?>
+            <div class="col-12 col-sm-6 mt-3 m-sm-0 d-flex justify-content-end align-items-center">
+                <ul class="d-flex m-0 p-0">
+                    <li><a href="mailto:david@screencode.at" class="text-white">E-Mail</a></li>
+                    <li><?php echo Utils::wrapInExtLink('Twitter', 'https://twitter.com/david_bru', 'text-white'); ?></li>
+                    <li><?php echo Utils::wrapInExtLink('GitHub', 'https://github.com/davidbru', 'text-white'); ?></li>
+                </ul>
             </div>
         </div>
     </div>
