@@ -26,9 +26,9 @@ include_once('./scripts/data.php');
 <body>
 <nav>
     <ul id="skiplinks" class="sr-only">
-        <li><a href="/#events">Zu den Veranstaltungen</a></li>
         <li><a href="/#work">Zur Arbeit</a></li>
         <li><a href="/#education">Zur Ausbildung</a></li>
+        <li><a href="/#events">Zu den Veranstaltungen</a></li>
         <li><a href="/#podcasts">Zu den Podcasts</a></li>
     </ul>
 </nav>
@@ -46,34 +46,6 @@ include_once('./scripts/data.php');
     </div>
 </header>
 <main class="container">
-    <section>
-        <h2 class="mt-5" id="events">Veranstaltungen</h2>
-        <?php
-        $counter = 0;
-        foreach($events AS $event) {
-            $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
-            if($counter == 0) {
-                $rowClasses[] = 'border-top';
-            }
-            echo '
-                <div class="'.implode(' ', $rowClasses).'">
-                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
-                        <small>'.Utils::formatDateRange($event['start_date'], (isset($event['end_date'])?$event['end_date']:NULL)).'</small>
-                    </div>
-                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
-                        '.Utils::wrapInExtLink($event['title'], (isset($event['url'])?$event['url']:NULL)).'
-                        '.(isset($event['addinfo'])?'<small>'.$event['addinfo'].'</small>':'').'
-                    </div>
-                    <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
-                        '.$event['location'].'
-                    </div>
-              </div>
-                ';
-            $counter ++;
-        }
-        ?>
-    </section>
-
     <section>
         <h2 class="mt-5" id="work">Arbeit</h2>
         <?php
@@ -156,6 +128,34 @@ include_once('./scripts/data.php');
                 echo '<div class="row border-bottom"></div>';
             }
 
+            $counter ++;
+        }
+        ?>
+    </section>
+
+    <section>
+        <h2 class="mt-5" id="events">Veranstaltungen</h2>
+        <?php
+        $counter = 0;
+        foreach($events AS $event) {
+            $rowClasses = array('row', 'pt-1', 'pb-1', 'border-bottom');
+            if($counter == 0) {
+                $rowClasses[] = 'border-top';
+            }
+            echo '
+                <div class="'.implode(' ', $rowClasses).'">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">
+                        <small>'.Utils::formatDateRange($event['start_date'], (isset($event['end_date'])?$event['end_date']:NULL)).'</small>
+                    </div>
+                    <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
+                        '.Utils::wrapInExtLink($event['title'], (isset($event['url'])?$event['url']:NULL)).'
+                        '.(isset($event['addinfo'])?'<small>'.$event['addinfo'].'</small>':'').'
+                    </div>
+                    <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
+                        '.$event['location'].'
+                    </div>
+              </div>
+                ';
             $counter ++;
         }
         ?>
