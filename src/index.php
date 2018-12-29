@@ -62,6 +62,7 @@ include_once('./scripts/data.php');
                     </div>
                     <div class="offset-1 col-11 offset-sm-0 col-sm-5 col-md-7 col-lg-5">
                         '.Utils::wrapInExtLink($work['title'], (isset($work['url'])?$work['url']:NULL)).'
+                        '.(isset($work['focus'])?'<ul class="mb-0"><li>'.implode('</li><li>', $work['focus']).'</li></ul>':'').'
                     </div>
                     <div class="offset-2 col-10 offset-sm-0 col-sm-3 col-md-2 col-lg-5">
                         '.(isset($work['addinfo'])?$work['addinfo']:'').'

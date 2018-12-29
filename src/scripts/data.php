@@ -139,13 +139,43 @@ $works = array(
         'start_date' => '2012-04-01',
         'end_date' => 'ongoing',
         'title' => 'screencode GmbH',
-        'addinfo' => 'Chief Executive Officer',
-        'url' => 'https://www.screencode.at'
+        'addinfo' => 'Geschäfts&shy;führer',
+        'url' => 'https://www.screencode.at',
+        'focus' => array(
+            'Erstellung individueller Webseiten und Apps',
+            'Klientel: Kleine und mittlere Unternehmen
+            <ul>
+            <li>'.Utils::wrapInExtLink('Fronius', 'https://www.fronius.com/').'</li>
+            <li>'.Utils::wrapInExtLink('Miba', 'https://www.miba.com/').'</li>
+            <li>'.Utils::wrapInExtLink('amedes', 'https://www.amedes-group.com/').'</li>
+            <li>'.Utils::wrapInExtLink('ALK-Abelló', 'https://www.alk.net/at/').'</li>
+            <li>'.Utils::wrapInExtLink('Medizinische Universität Wien', 'https://www.pollenwarndienst.at/').'</li>
+            </ul>',
+            'Technologie: 
+                <ul>
+                <li>PHP <small>5.6+</small></li>
+                <li>TYPO3 <small>4.5+</small></li>
+                <li>Wordpress <small>4+</small></li>
+                <li>Drupal <small>7+</small></li>
+                <li>Node.js</li>
+                <li>Vue.js <small>2.x</small></li>
+                <li>Gulp</li>
+                </ul>'
+        )
     ),
     20050101 => array(
         'start_date' => '2005-01-01',
         'end_date' => '20120331',
-        'title' => 'Independent Web Developer'
+        'title' => 'Independent Web Developer',
+        'focus' => array(
+            'Erstellung individueller Webseiten',
+            'Klientel: Kleine Unternehmen',
+            'Technologie: 
+                <ul>
+                <li>PHP <small>5.6+</small></li>
+                <li>TYPO3 <small>4.5+</small></li>
+                </ul>'
+        )
     ),
 );
 krsort($works);
