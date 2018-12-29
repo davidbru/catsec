@@ -175,7 +175,7 @@ include_once('./scripts/data.php');
 </main>
 
 <footer id="container_footer" class="bg-dark mt-5">
-    <div class="container text-white pt-2 pb-2">
+    <div class="container text-white pt-4 pb-4">
         <div class="row">
             <div class="col-12 col-sm-6">
                 <strong>David Brunnthaler</strong><br />
