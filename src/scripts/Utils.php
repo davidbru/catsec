@@ -4,7 +4,7 @@ class Utils {
         $start_date = new DateTime($start_date);
 
         if ($end_date === 'ongoing') {
-            $dateOut = $start_date->format('Y') . '–' . $end_date;
+            $dateOut = 'seit '.$start_date->format('Y');
         } elseif (!is_null($end_date)) {
             $end_date = new DateTime($end_date);
 
