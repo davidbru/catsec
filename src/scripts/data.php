@@ -141,9 +141,9 @@ $works = array(
         'title' => 'screencode GmbH',
         'url' => 'https://www.screencode.at',
         'addinfo' => array(
-            'Geschäftsführer',
+            'Geschäftsführer, Teilhaber und Webentwickler',
             'Erstellung individueller Webseiten und Apps',
-            'Klientel: Kleine und mittlere Unternehmen
+            'Kunden: Kleine und mittlere Unternehmen
             <ul>
             <li>'.Utils::wrapInExtLink('Fronius', 'https://www.fronius.com/').'</li>
             <li>'.Utils::wrapInExtLink('Miba', 'https://www.miba.com/').'</li>
@@ -154,6 +154,7 @@ $works = array(
             'Technologien: 
                 <ul>
                 <li>PHP <small>5.6+</small></li>
+                <li>JavaScript</li>
                 <li>TYPO3 <small>4.5+</small></li>
                 <li>Wordpress <small>4+</small></li>
                 <li>Drupal <small>7+</small></li>
@@ -169,10 +170,11 @@ $works = array(
         'title' => 'Selbstständiger Web Entwickler',
         'addinfo' => array(
             'Erstellung individueller Webseiten',
-            'Klientel: Kleine Unternehmen',
+            'Kunden: Kleine Unternehmen',
             'Technologien: 
                 <ul>
                 <li>PHP <small>5.6+</small></li>
+                <li>JavaScript</li>
                 <li>TYPO3 <small>4.5+</small></li>
                 </ul>'
         )
@@ -182,28 +184,28 @@ krsort($works);
 
 
 $skills = array(
-    'Programmier&shy;sprachen' => array(
-        'PHP', 'Python', 'Cordova'
+    'Programmier- & Skriptsprachen' => array(
+        'PHP', 'JavaScript', 'Python', 'Cordova'
     ),
-    'Daten&shy;banken' => array(
+    'Datenbanken' => array(
         'MySQL', 'MariaDB', 'PostgreSQL'
     ),
     'CMS' => array(
         'TYPO3', 'Wordpress', 'Drupal'
     ),
-    'Frame&shy;work' => array(
+    'Framework' => array(
         'Vue.js', 'Bootstrap'
     ),
     'Diverses' => array(
         'Node.js', 'Vim', 'Sass', 'Drush', 'Git', 'Virtualbox', 'Grafana'
     ),
-    'Paket&shy;verwaltung' => array(
+    'Paketverwaltung' => array(
         'npm', 'Composer', 'Homebrew', 'pip'
     ),
-    'Betriebs&shy;systeme' => array(
+    'Betriebssysteme' => array(
         'macOS', 'Windows', 'Ubuntu', 'Raspbian', 'Kali Linux'
     ),
-    'Hard&shy;ware' => array(
+    'Hardware' => array(
         'Apple', 'MikroTik', 'Raspberry PI'
     ),
     'Security Toolkits' => array(
