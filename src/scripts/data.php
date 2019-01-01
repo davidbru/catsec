@@ -185,7 +185,7 @@ krsort($works);
 
 $skills = array(
     'Programmier- & Skriptsprachen' => array(
-        'PHP', 'JavaScript', 'Python', 'Cordova'
+        'PHP', 'JavaScript', 'Python', 'Cordova', 'Shell'
     ),
     'Datenbanken' => array(
         'MySQL', 'MariaDB', 'PostgreSQL'
