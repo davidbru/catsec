@@ -189,8 +189,9 @@ include_once('./scripts/data.php');
         <ul class="privateEducations row m-0 p-0">
             <?php
             foreach($privateEducations AS $privateEducation) {
+                $altTag = $privateEducation['title'].' '.$privateEducation['type'].' Cover Bild';
                 echo '<li class="col-6 col-sm-4 col-md-3 col-lg-2 pb-3"><div>'.
-                    Utils::wrapInExtLink('<img src="/img/'.$privateEducation['img'].'" alt="'.$privateEducation['title'].' '.$privateEducation['type'].' Cover Bild" title="'.$privateEducation['title'].' Podcast Cover Bild" /><div class="text">'.$privateEducation['title'].'</div>', (isset($privateEducation['url'])?$privateEducation['url']:NULL)).
+                    Utils::wrapInExtLink('<img src="/img/'.$privateEducation['img'].'" alt="'.$altTag.'" title="'.$altTag.'" /><div class="text">'.$privateEducation['title'].' <small>'.$privateEducation['type'].'</small></div>', (isset($privateEducation['url'])?$privateEducation['url']:NULL)).
                     '</div></li>';
             }
             ?>

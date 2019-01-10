@@ -511,6 +511,39 @@ $privateEducations = array(
         'url' => 'https://workingdraft.de/',
         'img' => 'working-draft.png',
         'type' => 'Podcast'
+    ),
+
+    array(
+        'title' => 'Black Hat',
+        'url' => 'https://www.youtube.com/user/BlackHatOfficialYT',
+        'img' => 'blackhat.jpg',
+        'type' => 'Videos'
+    ),
+    array(
+        'title' => 'CCC',
+        'url' => 'https://media.ccc.de/',
+        'img' => 'ccc.png',
+        'type' => 'Videos'
+    ),
+    array(
+        'title' => 'DEFCON',
+        'url' => 'https://www.youtube.com/user/DEFCONConference/',
+        'img' => 'defcon.jpg',
+        'type' => 'Videos'
+    ),
+    array(
+        'title' => 'HAK5',
+        'url' => 'https://www.youtube.com/channel/UC3s0BtrBJpwNDaflRSoiieQ',
+        'img' => 'hak5.jpg',
+        'type' => 'Videos'
+    ),
+
+    array(
+        'title' => 'Hack The Box',
+        'url' => 'https://www.hackthebox.eu/',
+        'img' => 'hackthebox.png',
+        'type' => 'Website'
     )
+
 );
 usort($privateEducations, array('Utils', 'cmpTitleAsc'));
