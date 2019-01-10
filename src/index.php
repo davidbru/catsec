@@ -30,7 +30,7 @@ include_once('./scripts/data.php');
         <li><a href="/#skills">Zu den Kompetenzen</a></li>
         <li><a href="/#education">Zur Ausbildung</a></li>
         <li><a href="/#events">Zu den Veranstaltungen</a></li>
-        <li><a href="/#podcasts">Zu den Podcasts</a></li>
+        <li><a href="/#privateEducation">Zur digitalen Fortbildung</a></li>
     </ul>
 </nav>
 
@@ -184,13 +184,13 @@ include_once('./scripts/data.php');
         ?>
     </section>
 
-    <section id="podcasts">
-        <h2 class="mt-5">Podcasts</h2>
-        <ul class="podcasts row m-0 p-0">
+    <section id="privateEducation">
+        <h2 class="mt-5">Digitale Fortbildung</h2>
+        <ul class="privateEducations row m-0 p-0">
             <?php
-            foreach($podcasts AS $podcast) {
-                echo '<li class="col-12 col-sm-6 col-md-4 col-lg-3 pb-3"><div>'.
-                    Utils::wrapInExtLink('<img src="/img/'.$podcast['img'].'" alt="'.$podcast['title'].' Podcast Cover Bild" title="'.$podcast['title'].' Podcast Cover Bild" /><div class="text">'.$podcast['title'].'</div>', (isset($podcast['url'])?$podcast['url']:NULL)).
+            foreach($privateEducations AS $privateEducation) {
+                echo '<li class="col-6 col-sm-4 col-md-3 col-lg-2 pb-3"><div>'.
+                    Utils::wrapInExtLink('<img src="/img/'.$privateEducation['img'].'" alt="'.$privateEducation['title'].' '.$privateEducation['type'].' Cover Bild" title="'.$privateEducation['title'].' Podcast Cover Bild" /><div class="text">'.$privateEducation['title'].'</div>', (isset($privateEducation['url'])?$privateEducation['url']:NULL)).
                     '</div></li>';
             }
             ?>

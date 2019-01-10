@@ -391,106 +391,126 @@ $educations = array(
 krsort($educations);
 
 
-$podcasts = array(
+$privateEducations = array(
     array(
         'title' => 'Chaosradio',
         'url' => 'https://chaosradio.de/',
-        'img' => 'chaosradio.png'
+        'img' => 'chaosradio.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'The CyberWire',
         'url' => 'https://www.thecyberwire.com/',
-        'img' => 'cyberwire.png'
+        'img' => 'cyberwire.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Darknet Diaries',
         'url' => 'https://darknetdiaries.com/',
-        'img' => 'darknet-diaries.png'
+        'img' => 'darknet-diaries.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Donau Tech Radio - DTR',
         'url' => 'https://dtr.fm/',
-        'img' => 'donau-tech-radio.png'
+        'img' => 'donau-tech-radio.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Grumpy Old Geeks',
         'url' => 'http://gog.show/',
-        'img' => 'grumpy-old-geeks.png'
+        'img' => 'grumpy-old-geeks.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Alternativlos',
         'url' => 'https://www.alternativlos.org/',
-        'img' => 'alternativlos.svg'
+        'img' => 'alternativlos.svg',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Brakeing Down Security Podcast',
         'url' => 'http://brakeingsecurity.com/',
-        'img' => 'brakeing-down-security.png'
+        'img' => 'brakeing-down-security.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'CRE: Technik, Kultur, Gesellschaft',
         'url' => 'https://cre.fm/',
-        'img' => 'cre.png'
+        'img' => 'cre.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Future State',
         'url' => 'https://futurestatepodcast.com/',
-        'img' => 'future-state.jpg'
+        'img' => 'future-state.jpg',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Hacking Humans',
         'url' => 'https://thecyberwire.com/podcasts/hacking-humans.html',
-        'img' => 'hacking-humans.png'
+        'img' => 'hacking-humans.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Internet History Podcast',
         'url' => 'http://www.internethistorypodcast.com/',
-        'img' => 'internet-history-podcast.png'
+        'img' => 'internet-history-podcast.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Malicious Life',
         'url' => 'https://malicious.life/',
-        'img' => 'malicious-life.jpg'
+        'img' => 'malicious-life.jpg',
+        'type' => 'Podcast'
     ),
     array(
-        'title' => 'Rechtsbelehrung - Jurapodcast mit Netzthemen',
+        'title' => 'Rechts&shy;belehrung',
         'url' => 'https://rechtsbelehrung.com/',
-        'img' => 'rechtsbelehrung.png'
+        'img' => 'rechtsbelehrung.png',
+        'type' => 'Podcast'
     ),
     array(
-        'title' => 'Recorded Future - Inside Threat Intelligence for Cyber Security',
+        'title' => 'Recorded Future',
         'url' => 'https://www.recordedfuture.com/resources/podcasts/',
-        'img' => 'recorded-future.png'
+        'img' => 'recorded-future.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Reply All',
         'url' => 'https://www.gimletmedia.com/reply-all/',
-        'img' => 'reply-all.png'
+        'img' => 'reply-all.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Risky Business',
         'url' => 'https://risky.biz/netcasts/risky-business/',
-        'img' => 'risky-biz.png'
+        'img' => 'risky-biz.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Root Access',
         'url' => 'https://www.rootaccesspodcast.com/',
-        'img' => 'root-access.jpg'
+        'img' => 'root-access.jpg',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'ScriptCast - A podcast about JavaScript',
         'url' => 'https://javascript-podcast.com/',
-        'img' => 'scriptcast.png'
+        'img' => 'scriptcast.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Was soll das?',
         'url' => 'https://twitter.com/podwassolldas',
-        'img' => 'was-soll-das.png'
+        'img' => 'was-soll-das.png',
+        'type' => 'Podcast'
     ),
     array(
         'title' => 'Working Draft',
         'url' => 'https://workingdraft.de/',
-        'img' => 'working-draft.png'
+        'img' => 'working-draft.png',
+        'type' => 'Podcast'
     )
 );
-usort($podcasts, array('Utils', 'cmpTitleAsc'));
+usort($privateEducations, array('Utils', 'cmpTitleAsc'));
