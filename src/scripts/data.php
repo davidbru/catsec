@@ -543,6 +543,25 @@ $privateEducations = array(
         'url' => 'https://www.hackthebox.eu/',
         'img' => 'hackthebox.png',
         'type' => 'Website'
+    ),
+
+    array(
+        'title' => 'The Tangled Web',
+        'url' => 'https://nostarch.com/tangledweb',
+        'img' => 'tangled-web.jpg',
+        'type' => 'Buch'
+    ),
+    array(
+        'title' => 'Smart Girl\'s Guide to Privacy',
+        'url' => 'https://nostarch.com/smartgirlsguide',
+        'img' => 'smart-girls-guide-to-privacy.jpg',
+        'type' => 'Buch'
+    ),
+    array(
+        'title' => 'Ghost in the Wires',
+        'url' => 'https://www.mitnicksecurity.com/shopping/books-by-kevin-mitnick',
+        'img' => 'ghost-in-the-wires.jpg',
+        'type' => 'Buch'
     )
 
 );
