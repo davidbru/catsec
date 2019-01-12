@@ -185,7 +185,10 @@ include_once('./scripts/data.php');
     </section>
 
     <section id="privateEducation">
-        <h2 class="mt-5">Digitale Fortbildung</h2>
+        <h2 class="mt-5">Fortbildung</h2>
+        <div class="row pb-1 mb-3 border-bottom">
+            <div class="col-12">Digital & Analog</div>
+        </div>
         <ul class="privateEducations row m-0 p-0">
             <?php
             foreach($privateEducations AS $privateEducation) {
