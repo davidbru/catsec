@@ -69,28 +69,22 @@ headerAnimation();
 function headerAnimation() {
     setTimeout(function() {
         toggleClass(elHeaderLineOne, 'hideMe');
+        toggleClass(elHeaderLineTwo, 'hideMe');
 
         setTimeout(function() {
-            toggleClass(elHeaderLineTwo, 'hideMe');
+            currentModulo = headerAnimationCounter%2;
+            elHeaderLineOne.innerHTML = headerText[currentModulo][0];
+            elHeaderLineTwo.innerHTML = headerText[currentModulo][1];
 
             setTimeout(function() {
-                currentModulo = headerAnimationCounter%2;
-                elHeaderLineOne.innerHTML = headerText[currentModulo][0];
-                elHeaderLineTwo.innerHTML = headerText[currentModulo][1];
+                toggleClass(elHeaderLineOne, 'hideMe');
+                toggleClass(elHeaderLineTwo, 'hideMe');
 
                 setTimeout(function() {
-                    toggleClass(elHeaderLineOne, 'hideMe');
-
-                    setTimeout(function () {
-                        toggleClass(elHeaderLineTwo, 'hideMe');
-
-                        setTimeout(function() {
-                            headerAnimationCounter++;
-                            headerAnimation();
-                        }, 3000);
-                    }, 500);
-                }, 400);
-            }, 600);
-        }, 75);
+                    headerAnimationCounter++;
+                    headerAnimation();
+                }, 3000);
+            }, 400);
+        }, 600);
     }, 2000);
 }
