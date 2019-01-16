@@ -215,6 +215,15 @@ $skills = array(
 
 
 $educations = array(
+    20000101 => array(
+        'start_date' => '2000-01-01',
+        'end_date' => '2005-01-01',
+        'university' => 'BBS Rohrbach',
+        'location' => 'Rohrbach',
+        'study_course' => 'Informationstechnologie',
+        'degree' => 'Matura',
+        'url' => 'https://www.bbs-rohrbach.at/unsere-schultypen/hak-ikt/'
+    ),
     20060101 => array(
         'start_date' => '2006-01-01',
         'end_date' => '2009-05-01',
@@ -348,9 +357,9 @@ $educations = array(
             )
         )
     ),
-    20100101 => array(
+    20090101 => array(
         'start_date' => '2009-10-01',
-        'end_date' => '20120331',
+        'end_date' => '2012-03-31',
         'university' => 'Universität für künstlerische und industrielle Gestaltung',
         'location' => 'Linz',
         'study_course' => 'Interface Cultures',
