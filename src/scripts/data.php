@@ -197,7 +197,7 @@ $skills = array(
         'Vue.js', 'Bootstrap'
     ),
     'Diverses' => array(
-        'Node.js', 'Vim', 'Sass', 'jQuery', 'Drush', 'Git', 'Virtualbox', 'Grafana'
+        'Node.js', 'Vim', 'Sass', 'jQuery', 'Drush', 'Git', 'Virtualbox', 'Grafana', 'ngrok', 'VirtualBox', 'MAMP'
     ),
     'Paketverwaltung' => array(
         'npm', 'Composer', 'Homebrew', 'pip'
