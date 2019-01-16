@@ -16,6 +16,15 @@ a {
         max-width:70px;
         height: auto;
     }
+
+    #headerLineOne,
+    #headerLineTwo {
+        transition: opacity 500ms ease-in-out;
+
+        &.hideMe {
+            opacity:0;
+        }
+    }
 }
 
 .container_ects {

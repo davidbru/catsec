@@ -42,8 +42,8 @@ include_once('./scripts/data.php');
             </div>
             <div class="col-12 col-sm-10">
                 <h1>
-                    <small>Curriculum Vitae</small>
-                    <br/>David Brunnthaler
+                    <small><span id="headerLineOne">Curriculum Vitae</span></small>
+                    <br/><span id="headerLineTwo">David Brunnthaler</span>
                 </h1>
             </div>
         </div>
