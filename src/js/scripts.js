@@ -31,6 +31,14 @@ function toggleClass(el, className) {
 }
 
 
+function addClass(el, className) {
+    if (el.classList)
+        el.classList.add(className);
+    else
+        el.className += ' ' + className;
+}
+
+
 function removeClass(el, className) {
     if (el.classList)
         el.classList.remove(className);
@@ -59,26 +67,26 @@ var elHeaderLineOne = document.getElementById('headerLineOne');
 var elHeaderLineTwo = document.getElementById('headerLineTwo');
 var headerAnimationCounter = 0;
 var headerText = [
-    ['$ cat index.php', '(^._.^)ﾉ'],
-    ['Curriculum Vitae', 'David Brunnthaler'],
+    ['<span>$ cat index.php</span>', '(^._.^)ﾉ'],
+    ['Curriculum Vitae', 'David Brunnthaler']
 ];
 var currentModulo;
 
 headerAnimation();
 
 function headerAnimation() {
+    currentModulo = headerAnimationCounter%2;
     setTimeout(function() {
-        toggleClass(elHeaderLineOne, 'hideMe');
-        toggleClass(elHeaderLineTwo, 'hideMe');
+        addClass(elHeaderLineOne, 'hideMe');
+        addClass(elHeaderLineTwo, 'hideMe');
 
         setTimeout(function() {
-            currentModulo = headerAnimationCounter%2;
             elHeaderLineOne.innerHTML = headerText[currentModulo][0];
             elHeaderLineTwo.innerHTML = headerText[currentModulo][1];
 
             setTimeout(function() {
-                toggleClass(elHeaderLineOne, 'hideMe');
-                toggleClass(elHeaderLineTwo, 'hideMe');
+                removeClass(elHeaderLineOne, 'hideMe');
+                removeClass(elHeaderLineTwo, 'hideMe');
 
                 setTimeout(function() {
                     headerAnimationCounter++;
