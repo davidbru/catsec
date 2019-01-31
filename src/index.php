@@ -41,10 +41,14 @@ include_once('./scripts/data.php');
                 <img src="/img/logo_db.svg" alt="Logo David Brunnthaler" title="Logo David Brunnthaler"/>
             </div>
             <div class="col-12 col-sm-10">
-                <h1>
-                    <small><span id="headerLineOne" class="typewriter">Curriculum Vitae</span></small><br/>
-                    <span id="headerLineTwo">David Brunnthaler</span>
+                <h1 id="headerContainer" class="headerGroupCV">
+                    <small id="headerLine1">Curriculum Vitae</small><br/>
+                    <span id="headerLine2" class="delayAnimation">David Brunnthaler</span>
                 </h1>
+                <?php /*<h1 id="headerContainer" class="headerGroup1">
+                    <small id="headerLineOne">$ cat index.php</small><br/>
+                    <span id="headerLineTwo">(^._.^)ﾉ</span>
+                </h1>*/ ?>
             </div>
         </div>
     </div>

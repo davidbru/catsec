@@ -31,19 +31,24 @@ function toggleClass(el, className) {
 }
 
 
-function addClass(el, className) {
-    if (el.classList)
-        el.classList.add(className);
-    else
-        el.className += ' ' + className;
+function addClass(el, classNameArray) {
+    for(var i = 0; i < classNameArray.length; i++) {
+        if (el.classList) {
+            el.classList.add(classNameArray[i]);
+        } else {
+            el.className += ' ' + classNameArray[i];
+        }
+    }
 }
 
 
-function removeClass(el, className) {
-    if (el.classList)
-        el.classList.remove(className);
-    else
-        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+function removeClass(el, classNameArray) {
+    for (var i = 0; i < classNameArray.length; i++) {
+        if (el.classList)
+            el.classList.remove(classNameArray[i]);
+        else
+            el.className = el.className.replace(new RegExp('(^|\\b)' + classNameArray[i].split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    }
 }
 
 
@@ -63,36 +68,57 @@ function correctEctsLinkTexts() {
 }
 
 
-var elHeaderLineOne = document.getElementById('headerLineOne');
-var elHeaderLineTwo = document.getElementById('headerLineTwo');
-var headerAnimationCounter = 0;
+var elHeaderLine1 = document.getElementById('headerLine1');
+var elHeaderLine2 = document.getElementById('headerLine2');
 var headerText = [
-    ['<span>$ cat index.php</span>', '(^._.^)ﾉ'],
+    ['$ cat index.php', '(^._.^)ﾉ'],
     ['Curriculum Vitae', 'David Brunnthaler']
 ];
-var currentModulo;
 
 headerAnimation();
 
 function headerAnimation() {
-    currentModulo = headerAnimationCounter%2;
-    setTimeout(function() {
-        addClass(elHeaderLineOne, 'hideMe');
-        addClass(elHeaderLineTwo, 'hideMe');
+    console.log('headerAnimation');
+    setTimeout(function () {
+        console.log('// fadeOut Text1 A+B');
+        addClass(elHeaderLine1, ['animated', 'fadeOut']);
+        addClass(elHeaderLine2, ['animated', 'fadeOut']);
 
         setTimeout(function() {
-            elHeaderLineOne.innerHTML = headerText[currentModulo][0];
-            elHeaderLineTwo.innerHTML = headerText[currentModulo][1];
+            console.log('// typewrite Text2 A');
+            removeClass(elHeaderLine1, ['animated', 'fadeOut']);
+            addClass(elHeaderLine1, ['typewriter']);
+            elHeaderLine1.innerHTML = headerText[0][0];
 
             setTimeout(function() {
-                removeClass(elHeaderLineOne, 'hideMe');
-                removeClass(elHeaderLineTwo, 'hideMe');
+                console.log('// show Text2 B');
+                elHeaderLine2.innerHTML = headerText[0][1];
+                removeClass(elHeaderLine2, ['animated', 'fadeOut']);
 
                 setTimeout(function() {
-                    headerAnimationCounter++;
-                    headerAnimation();
-                }, 3000);
-            }, 400);
-        }, 600);
-    }, 2000);
+                    console.log('// fadeOut Text2 A+B');
+                    addClass(elHeaderLine1, ['animated', 'fadeOut']);
+                    addClass(elHeaderLine2, ['animated', 'fadeOut']);
+
+                    setTimeout(function() {
+                        console.log('// fadeIn Text1 A+B');
+                        removeClass(elHeaderLine1, ['typewriter', 'animated', 'fadeOut']);
+                        removeClass(elHeaderLine2, ['animated', 'fadeOut']);
+
+                        elHeaderLine1.innerHTML = headerText[1][0];
+                        elHeaderLine2.innerHTML = headerText[1][1];
+                        addClass(elHeaderLine1, ['animated', 'fadeIn']);
+                        addClass(elHeaderLine2, ['animated', 'fadeIn']);
+
+                        setTimeout(function() {
+                            console.log('// --> call headerAnimation() again');
+                            removeClass(elHeaderLine1, ['animated', 'fadeIn']);
+                            removeClass(elHeaderLine2, ['animated', 'fadeIn']);
+                            headerAnimation();
+                        },2000); // --> call headerAnimation() again
+                    },2000); // fadeIn Text1 A+B
+                }, 4000); // fadeOut Text2 A+B
+            }, 1500); // show Text2 B
+        },2000); // typewrite Text2 A
+    }, 4000); // fadeOut Text1 A+B
 }
