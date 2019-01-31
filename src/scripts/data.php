@@ -527,6 +527,12 @@ $privateEducations = array(
         'img' => 'hackable.png',
         'type' => 'Podcast'
     ),
+    array(
+        'title' => 'The Jordan Harbinger Show',
+        'url' => 'https://www.jordanharbinger.com/podcast/',
+        'img' => 'jordan-harbinger.jpg',
+        'type' => 'Podcast'
+    ),
 
     array(
         'title' => 'Black Hat',
