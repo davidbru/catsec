@@ -78,30 +78,30 @@ var headerText = [
 headerAnimation();
 
 function headerAnimation() {
-    console.log('headerAnimation');
+    // console.log('headerAnimation');
     setTimeout(function () {
-        console.log('// fadeOut Text1 A+B');
+        // console.log('// fadeOut Text1 A+B');
         addClass(elHeaderLine1, ['animated', 'fadeOut']);
         addClass(elHeaderLine2, ['animated', 'fadeOut']);
 
         setTimeout(function() {
-            console.log('// typewrite Text2 A');
+            // console.log('// typewrite Text2 A');
             removeClass(elHeaderLine1, ['animated', 'fadeOut']);
             addClass(elHeaderLine1, ['typewriter']);
             elHeaderLine1.innerHTML = headerText[0][0];
 
             setTimeout(function() {
-                console.log('// show Text2 B');
+                // console.log('// show Text2 B');
                 elHeaderLine2.innerHTML = headerText[0][1];
                 removeClass(elHeaderLine2, ['animated', 'fadeOut']);
 
                 setTimeout(function() {
-                    console.log('// fadeOut Text2 A+B');
+                    // console.log('// fadeOut Text2 A+B');
                     addClass(elHeaderLine1, ['animated', 'fadeOut']);
                     addClass(elHeaderLine2, ['animated', 'fadeOut']);
 
                     setTimeout(function() {
-                        console.log('// fadeIn Text1 A+B');
+                        // console.log('// fadeIn Text1 A+B');
                         removeClass(elHeaderLine1, ['typewriter', 'animated', 'fadeOut']);
                         removeClass(elHeaderLine2, ['animated', 'fadeOut']);
 
@@ -111,7 +111,7 @@ function headerAnimation() {
                         addClass(elHeaderLine2, ['animated', 'fadeIn']);
 
                         setTimeout(function() {
-                            console.log('// --> call headerAnimation() again');
+                            // console.log('// --> call headerAnimation() again');
                             removeClass(elHeaderLine1, ['animated', 'fadeIn']);
                             removeClass(elHeaderLine2, ['animated', 'fadeIn']);
                             headerAnimation();
