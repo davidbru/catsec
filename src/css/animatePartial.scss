@@ -1,11 +1,17 @@
 .typewriter {
-    font-family:"Courier New", Courier, monospace;
+    position: relative;
     display:inline-block;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid #fff; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
+    top: 9px;
+    font-family:"Courier New", Courier, monospace;
+    font-size: 89%;
+    font-weight: bold;
+    line-height:1;
+    letter-spacing:1px;
+    overflow: hidden;
+    border-right: .15em solid #fff;
+    white-space: nowrap;
     animation:
-            typing 1.5s steps(15, end),
+            typing 1.5s steps(14, end),
             blink-caret .75s step-end infinite;
 }
 
