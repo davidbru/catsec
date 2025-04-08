@@ -1,12 +1,10 @@
 RewriteEngine On
 
 # force non-www
-RewriteCond %{HTTP_HOST} !^dev\.catsec\.io$
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
 # force HTTPs
-RewriteCond %{HTTP_HOST} !^dev\.catsec\.io$
 RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
 RewriteCond %{HTTP:X-Forwarded-Proto} =""
 RewriteCond %{HTTPS} !=on
